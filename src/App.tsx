@@ -48,7 +48,7 @@ import { ProductDetailPage } from './components/ProductDetailPage';
 import { CatalogPage } from './components/CatalogPage';
 import { QuoteModal } from './components/QuoteModal';
 import { AxaCornerAccent } from './components/AxaCornerAccent';
-import { sendFormEmail, AGENCY_EMAIL, SECONDARY_EMAIL } from './services/emailService';
+import { sendFormEmail, AGENCY_EMAIL } from './services/emailService';
 
 const SaadaMonogram = ({ 
   isScrolled = false, 
@@ -1035,12 +1035,21 @@ const ProfessionalSection = ({
                   <CheckCircle2 size={36} className="text-emerald-600 mx-auto" />
                   <h5 className="font-bold text-emerald-900 text-sm">Demande d'audit transmise !</h5>
                   <p className="text-xs text-emerald-700">
-                    Votre demande pour <strong>{proCompany}</strong> a été directement transmise à l'agence (<strong className="underline">axasaada9@gmail.com</strong>).
+                    Votre demande pour <strong>{proCompany}</strong> a été directement transmise à l'agence (<strong className="underline">{AGENCY_EMAIL}</strong>).
                   </p>
                   <p className="text-[11px] text-emerald-800/80">
                     Notre chargé de clientèle Entreprises va contacter le <strong>{proPhone}</strong> sous 24h ouvrées.
                   </p>
-                  <div className="pt-2">
+                  <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-2">
+                    <a
+                      href={`https://wa.me/212661180422?text=${encodeURIComponent(`Bonjour Assurances Hay Saada, nous venons de soumettre une demande d'audit pour l'entreprise : ${proCompany} (${proSector}) - Tél : ${proPhone}`)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold text-xs shadow-xs"
+                    >
+                      <MessageCircle size={14} />
+                      <span>Confirmer sur WhatsApp (06 61 18 04 22)</span>
+                    </a>
                     <button
                       type="button"
                       onClick={() => {
@@ -1114,7 +1123,7 @@ const ProfessionalSection = ({
                   </button>
                   <p className="text-[10px] text-gray-400 text-center flex items-center justify-center gap-1 pt-1">
                     <Mail size={11} className="text-gray-400" />
-                    <span>Demandes transmises directement à axasaada9@gmail.com</span>
+                    <span>Demandes transmises directement à {AGENCY_EMAIL}</span>
                   </p>
                 </form>
               )}
@@ -1861,16 +1870,11 @@ const Contact = () => {
                     <Mail className="text-[#002b80]" size={20} />
                   </div>
                   <div>
-                    <p className="text-[#002b80] text-xs font-bold uppercase tracking-wider mb-1">Emails Directs Agence</p>
-                    <div className="flex flex-col gap-0.5">
-                      <a href="mailto:axasaada9@gmail.com" className="text-sm sm:text-base font-bold text-[#001f5c] hover:text-[#ff0000] transition-colors break-all">
-                        axasaada9@gmail.com
-                      </a>
-                      <a href="mailto:achrafbdll@gmail.com" className="text-sm sm:text-base font-bold text-[#001f5c] hover:text-[#ff0000] transition-colors break-all">
-                        achrafbdll@gmail.com
-                      </a>
-                    </div>
-                    <p className="text-xs text-gray-500 mt-1">Réponse garantie sous 24h ouvrées</p>
+                    <p className="text-[#002b80] text-xs font-bold uppercase tracking-wider mb-1">Email</p>
+                    <a href={`mailto:${AGENCY_EMAIL}`} className="text-base sm:text-lg md:text-xl font-bold text-[#001f5c] hover:text-[#ff0000] transition-colors break-all">
+                      {AGENCY_EMAIL}
+                    </a>
+                    <p className="text-xs text-gray-500 mt-0.5">Réponse garantie sous 24h ouvrées</p>
                   </div>
                 </div>
               </div>
@@ -1891,7 +1895,7 @@ const Contact = () => {
                     </div>
                     <h3 className="text-2xl font-black text-[#001f5c]">Demande transmise avec succès !</h3>
                     <p className="text-gray-600 max-w-md mx-auto text-sm leading-relaxed">
-                      Votre demande a bien été envoyée directement à notre agence aux adresses : <strong className="text-[#001f5c] underline">axasaada9@gmail.com</strong> et <strong className="text-[#001f5c] underline">achrafbdll@gmail.com</strong>.
+                      Votre demande a bien été envoyée directement à notre agence à l'adresse : <strong className="text-[#001f5c] underline">{AGENCY_EMAIL}</strong>.
                     </p>
                     <p className="text-xs text-gray-500 max-w-sm mx-auto">
                       Un conseiller dédié de l'agence Assurances Hay Saada étudie vos éléments et vous contactera au <strong>{submittedData.phone}</strong> sous 24h ouvrées.
@@ -1899,25 +1903,25 @@ const Contact = () => {
 
                     <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
                       <a
-                        href={`mailto:${AGENCY_EMAIL},${SECONDARY_EMAIL}?subject=${encodeURIComponent(`[Demande Devis AXA Hay Saada] ${submittedData.type} - ${submittedData.name}`)}&body=${encodeURIComponent(
-                          `Bonjour l'équipe Assurances Hay Saada,\n\nUne nouvelle demande a été envoyée depuis le formulaire de contact du site web :\n\n• Nom complet : ${submittedData.name}\n• Téléphone : ${submittedData.phone}\n• Email : ${submittedData.email || 'Non renseigné'}\n• Type d'Assurance : ${submittedData.type}\n• Message : ${submittedData.message || 'Aucun message particulier'}\n\nDestinataires officiels : ${AGENCY_EMAIL}, ${SECONDARY_EMAIL}`
-                        )}`}
-                        className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-[#001f5c] hover:bg-[#002b80] text-white font-bold text-xs uppercase tracking-wider transition-all shadow-md"
-                      >
-                        <Mail size={15} />
-                        <span>Ouvrir dans ma messagerie</span>
-                      </a>
-
-                      <a
                         href={`https://wa.me/212661180422?text=${encodeURIComponent(
-                          `Bonjour Assurances Hay Saada, je viens d'envoyer une demande de devis pour ${submittedData.type} (Nom: ${submittedData.name}, Tél: ${submittedData.phone}).`
+                          `Bonjour Assurances Hay Saada, je viens d'envoyer une demande de devis pour ${submittedData.type} (Nom: ${submittedData.name}, Tél: ${submittedData.phone}, Email: ${submittedData.email || 'Non renseigné'}).`
                         )}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold text-xs uppercase tracking-wider transition-all shadow-md"
                       >
                         <MessageCircle size={15} />
-                        <span>WhatsApp (06 61 18 04 22)</span>
+                        <span>Confirmer sur WhatsApp (06 61 18 04 22)</span>
+                      </a>
+
+                      <a
+                        href={`mailto:${AGENCY_EMAIL}?subject=${encodeURIComponent(`[Demande Devis AXA Hay Saada] ${submittedData.type} - ${submittedData.name}`)}&body=${encodeURIComponent(
+                          `Bonjour l'équipe Assurances Hay Saada,\n\nUne nouvelle demande a été envoyée depuis le formulaire de contact du site web :\n\n• Nom complet : ${submittedData.name}\n• Téléphone : ${submittedData.phone}\n• Email : ${submittedData.email || 'Non renseigné'}\n• Type d'Assurance : ${submittedData.type}\n• Message : ${submittedData.message || 'Aucun message particulier'}\n\nDestinataire officiel : ${AGENCY_EMAIL}`
+                        )}`}
+                        className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-[#001f5c] hover:bg-[#002b80] text-white font-bold text-xs uppercase tracking-wider transition-all shadow-md"
+                      >
+                        <Mail size={15} />
+                        <span>Copie par email</span>
                       </a>
                     </div>
 
@@ -1942,105 +1946,120 @@ const Contact = () => {
                     </div>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
-                      <div>
-                        <label className="block text-gray-700 text-xs font-bold uppercase tracking-wider mb-1.5 sm:mb-2">
-                          Nom Complet *
-                        </label>
-                        <input
-                          type="text"
-                          required
-                          value={contactForm.name}
-                          onChange={(e) => setContactForm({ ...contactForm, name: e.target.value })}
-                          className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#002b80] focus:bg-white transition-all text-sm"
-                          placeholder="Votre nom"
-                        />
+                  <div>
+                    <div className="mb-6 pb-4 border-b border-gray-100">
+                      <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-blue-50 text-[#001f5c] text-[10px] font-black uppercase tracking-wider mb-2">
+                        <span>Formulaire d'Inscription & Devis</span>
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#ff0000]" />
                       </div>
-                      <div>
-                        <label className="block text-gray-700 text-xs font-bold uppercase tracking-wider mb-1.5 sm:mb-2">
-                          Téléphone *
-                        </label>
-                        <input
-                          type="tel"
-                          required
-                          value={contactForm.phone}
-                          onChange={(e) => setContactForm({ ...contactForm, phone: e.target.value })}
-                          className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#002b80] focus:bg-white transition-all text-sm"
-                          placeholder="06 XX XX XX XX"
-                        />
-                      </div>
+                      <h3 className="text-xl sm:text-2xl font-black text-[#001f5c]">
+                        Formulaire d'Inscription en Ligne
+                      </h3>
+                      <p className="text-xs text-gray-500 mt-1 font-medium">
+                        Remplissez ce formulaire pour vous inscrire ou obtenir une proposition personnalisée. Vos informations sont transmises directement à l'adresse officielle de l'agence (<strong className="text-[#001f5c]">{AGENCY_EMAIL}</strong>).
+                      </p>
                     </div>
 
-                    <div>
-                      <label className="block text-gray-700 text-xs font-bold uppercase tracking-wider mb-1.5 sm:mb-2">
-                        Email
-                      </label>
-                      <input
-                        type="email"
-                        value={contactForm.email}
-                        onChange={(e) => setContactForm({ ...contactForm, email: e.target.value })}
-                        className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#002b80] focus:bg-white transition-all text-sm"
-                        placeholder="votre@email.com"
-                      />
-                    </div>
+                    <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+                        <div>
+                          <label className="block text-gray-700 text-xs font-bold uppercase tracking-wider mb-1.5 sm:mb-2">
+                            Nom Complet *
+                          </label>
+                          <input
+                            type="text"
+                            required
+                            value={contactForm.name}
+                            onChange={(e) => setContactForm({ ...contactForm, name: e.target.value })}
+                            className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#002b80] focus:bg-white transition-all text-sm"
+                            placeholder="Votre nom"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-gray-700 text-xs font-bold uppercase tracking-wider mb-1.5 sm:mb-2">
+                            Téléphone *
+                          </label>
+                          <input
+                            type="tel"
+                            required
+                            value={contactForm.phone}
+                            onChange={(e) => setContactForm({ ...contactForm, phone: e.target.value })}
+                            className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#002b80] focus:bg-white transition-all text-sm"
+                            placeholder="06 XX XX XX XX"
+                          />
+                        </div>
+                      </div>
 
-                    <div>
-                      <label className="block text-gray-700 text-xs font-bold uppercase tracking-wider mb-1.5 sm:mb-2">
-                        Type d'Assurance
-                      </label>
-                      <select 
-                        value={contactForm.type}
-                        onChange={(e) => setContactForm({ ...contactForm, type: e.target.value })}
-                        className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#002b80] focus:bg-white transition-all text-sm font-medium"
+                      <div>
+                        <label className="block text-gray-700 text-xs font-bold uppercase tracking-wider mb-1.5 sm:mb-2">
+                          Email
+                        </label>
+                        <input
+                          type="email"
+                          value={contactForm.email}
+                          onChange={(e) => setContactForm({ ...contactForm, email: e.target.value })}
+                          className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#002b80] focus:bg-white transition-all text-sm"
+                          placeholder="votre@email.com"
+                        />
+                      </div>
+
+                      <div>
+                        <label className="block text-gray-700 text-xs font-bold uppercase tracking-wider mb-1.5 sm:mb-2">
+                          Type d'Assurance
+                        </label>
+                        <select 
+                          value={contactForm.type}
+                          onChange={(e) => setContactForm({ ...contactForm, type: e.target.value })}
+                          className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#002b80] focus:bg-white transition-all text-sm font-medium"
+                        >
+                          <option value="Auto & Moto">Auto & Moto</option>
+                          <option value="Santé & Mutuelle">Santé & Mutuelle</option>
+                          <option value="Habitassur (Habitation)">Habitassur (Habitation)</option>
+                          <option value="Professionnelle & Entreprise">Professionnelle & Entreprise</option>
+                          <option value="Épargne & Retraite">Épargne & Retraite</option>
+                          <option value="Autre solution">Autre solution</option>
+                        </select>
+                      </div>
+
+                      <div>
+                        <label className="block text-gray-700 text-xs font-bold uppercase tracking-wider mb-1.5 sm:mb-2">
+                          Message (Optionnel)
+                        </label>
+                        <textarea
+                          rows={4}
+                          value={contactForm.message}
+                          onChange={(e) => setContactForm({ ...contactForm, message: e.target.value })}
+                          className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#002b80] focus:bg-white transition-all text-sm"
+                          placeholder="Comment pouvons-nous vous aider ?"
+                        ></textarea>
+                      </div>
+
+                      <button
+                        type="submit"
+                        disabled={isContactSubmitting}
+                        className={`w-full bg-[#002b80] hover:bg-[#001f5c] text-white font-bold py-3.5 sm:py-4 rounded-xl transition-all shadow-lg shadow-blue-900/20 active:scale-[0.99] flex items-center justify-center gap-2 text-sm ${
+                          isContactSubmitting ? 'opacity-75 cursor-not-allowed' : 'cursor-pointer'
+                        }`}
                       >
-                        <option value="Auto & Moto">Auto & Moto</option>
-                        <option value="Santé & Mutuelle">Santé & Mutuelle</option>
-                        <option value="Habitassur (Habitation)">Habitassur (Habitation)</option>
-                        <option value="Professionnelle & Entreprise">Professionnelle & Entreprise</option>
-                        <option value="Épargne & Retraite">Épargne & Retraite</option>
-                        <option value="Autre solution">Autre solution</option>
-                      </select>
-                    </div>
+                        {isContactSubmitting ? (
+                          <>
+                            <Loader2 size={18} className="animate-spin" />
+                            <span>Transmission à {AGENCY_EMAIL}...</span>
+                          </>
+                        ) : (
+                          <>
+                            <span>Envoyer le formulaire d'inscription</span>
+                            <ArrowRight size={18} />
+                          </>
+                        )}
+                      </button>
 
-                    <div>
-                      <label className="block text-gray-700 text-xs font-bold uppercase tracking-wider mb-1.5 sm:mb-2">
-                        Message (Optionnel)
-                      </label>
-                      <textarea
-                        rows={4}
-                        value={contactForm.message}
-                        onChange={(e) => setContactForm({ ...contactForm, message: e.target.value })}
-                        className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#002b80] focus:bg-white transition-all text-sm"
-                        placeholder="Comment pouvons-nous vous aider ?"
-                      ></textarea>
-                    </div>
-
-                    <button
-                      type="submit"
-                      disabled={isContactSubmitting}
-                      className={`w-full bg-[#002b80] hover:bg-[#001f5c] text-white font-bold py-3.5 sm:py-4 rounded-xl transition-all shadow-lg shadow-blue-900/20 active:scale-[0.99] flex items-center justify-center gap-2 text-sm ${
-                        isContactSubmitting ? 'opacity-75 cursor-not-allowed' : 'cursor-pointer'
-                      }`}
-                    >
-                      {isContactSubmitting ? (
-                        <>
-                          <Loader2 size={18} className="animate-spin" />
-                          <span>Transmission par email en cours...</span>
-                        </>
-                      ) : (
-                        <>
-                          <span>Envoyer ma demande</span>
-                          <ArrowRight size={18} />
-                        </>
-                      )}
-                    </button>
-
-                    <p className="text-[11px] text-gray-500 text-center flex items-center justify-center gap-1.5 pt-1">
-                      <Mail size={13} className="text-[#002b80] shrink-0" />
-                      <span>Toutes les demandes sont directement envoyées à <strong className="text-gray-800">axasaada9@gmail.com</strong> et <strong className="text-gray-800">achrafbdll@gmail.com</strong></span>
-                    </p>
-                  </form>
+                      <p className="text-[11px] text-gray-500 text-center flex items-center justify-center gap-1.5 pt-1">
+                        <Mail size={13} className="text-[#002b80] shrink-0" />
+                        <span>Tous les formulaires d'inscription sont directement envoyés à <strong className="text-gray-800">{AGENCY_EMAIL}</strong></span>
+                      </p>
+                    </form>
+                  </div>
                 )}
               </div>
             </div>
@@ -2222,9 +2241,7 @@ const Footer = ({
                     <span>06 61 18 04 22 (WhatsApp)</span>
                   </a>
                   {' '}•{' '}
-                  <a href="mailto:axasaada9@gmail.com" className="hover:text-white transition-colors font-medium">axasaada9@gmail.com</a>
-                  {' '}•{' '}
-                  <a href="mailto:achrafbdll@gmail.com" className="hover:text-white transition-colors font-medium">achrafbdll@gmail.com</a>
+                  <a href={`mailto:${AGENCY_EMAIL}`} className="hover:text-white transition-colors font-medium">{AGENCY_EMAIL}</a>
                 </span>
               </p>
             </div>
@@ -2340,15 +2357,9 @@ const Footer = ({
         
         {/* Ligne inférieure de Copyright et Mentions Légales */}
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4 pt-10 border-t border-white/10 text-xs">
-          <div className="flex flex-col sm:flex-row items-center gap-1.5 sm:gap-2.5 text-center sm:text-left">
-            <p className="text-blue-200/70 font-medium">
-              © 2026 Assurances Hay Saada - Intermédiaire Agréé AXA Assurance Maroc. Conforme ACAPS.
-            </p>
-            <span className="hidden sm:inline text-white/30">•</span>
-            <span className="text-blue-200/75 font-medium inline-flex items-center gap-1">
-              by <span className="text-white font-bold tracking-wide">assurleadcommunication</span>
-            </span>
-          </div>
+          <p className="text-blue-200/70 font-medium text-center sm:text-left">
+            © 2026 Assurances Hay Saada - Intermédiaire Agréé AXA Assurance Maroc. Conforme ACAPS.
+          </p>
           <div className="flex flex-wrap items-center justify-center gap-6 text-blue-200/70 font-medium">
             <span className="hover:text-white transition-colors cursor-pointer">Mentions Légales</span>
             <span className="hover:text-white transition-colors cursor-pointer">Protection Données CNDP</span>
@@ -2511,7 +2522,7 @@ export default function App() {
         if (hash === '#contact') {
           updateSEO(
             "Contact & Devis Assurance AXA Casablanca | Assurances Hay Saada Maroc",
-            "Contactez l'agence Assurances Hay Saada AXA à Casablanca (Hay Mohammadi). Téléphone: 05 22 63 02 68, WhatsApp: 06 61 18 04 22, Email: axasaada9@gmail.com."
+            `Contactez l'agence Assurances Hay Saada AXA à Casablanca (Hay Mohammadi). Téléphone: 05 22 63 02 68, WhatsApp: 06 61 18 04 22, Email: ${AGENCY_EMAIL}.`
           );
         } else {
           updateSEO(

@@ -179,7 +179,7 @@ export const PRODUCTS_DATA: ProductData[] = [
     "title": "Habitassur",
     "tagline": "Protégez votre foyer, vos biens et votre famille contre les imprévus du quotidien",
     "shortDescription": "Que vous soyez locataire ou propriétaire, l'assurance Habitassur vous protège contre l'incendie, les dégâts des eaux, le vol et les bris de glaces avec l'assistance AXA.",
-    "fullDescription": "Que vous soyez locataire, propriétaire occupant ou propriétaire non-occupant, l'assurance multirisque habitation Habitassur vous propose des solutions complètes pour vous prémunir contre tous les événements qui peuvent survenir dans votre logement : incendies et risques annexes, dégâts des eaux avec recherche de fuites et refoulement des égouts, vol et actes de vandalisme (y compris détériorations immobilières, vol dans dépendances séparées, serrures et frais de gardiennage), bris de glaces et miroirs (vitrages portes, fenêtres, marquises et vérandas), perte d'usage des locaux et recours des voisins et des tiers.",
+    "fullDescription": "Que vous soyez locataire, propriétaire occupant ou propriétaire non-occupant, l'assurance multirisque habitation Habitassur vous propose des solutions complètes pour vous prémunir contre tous les événements qui peuvent survenir dans votre logement : incendies et risques annexes, dégâts des eaux avec recherche de fuites et refoulement des égouts, vol et actes de vandalisme.",
     "iconName": "Home",
     "badge": "Contrat Habitassur AXA",
     "startingPrice": "Sur devis personnalisé",

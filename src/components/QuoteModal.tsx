@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { X, CheckCircle2, Send, Mail, Loader2, MessageCircle } from 'lucide-react';
+import { X, CheckCircle2, Shield, Send, Phone, MessageCircle, Mail, Loader2 } from 'lucide-react';
 import { PRODUCTS_DATA } from '../data/products';
-import { sendFormEmail, AGENCY_EMAIL, SECONDARY_EMAIL } from '../services/emailService';
+import { sendFormEmail, AGENCY_EMAIL } from '../services/emailService';
 
 interface QuoteModalProps {
   isOpen: boolean;
@@ -79,27 +79,36 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
               <CheckCircle2 size={36} />
             </div>
             <h3 className="text-2xl font-black text-[#001f5c] mb-2">
-              Demande transmise avec succès !
+              Formulaire d'inscription transmis !
             </h3>
             <p className="text-sm text-gray-600 leading-relaxed mb-4 font-medium">
-              Merci <strong>{name}</strong>. Votre demande de devis pour <strong>{selectedProduct}</strong> a été directement envoyée à l'agence (<strong className="text-[#001f5c] underline">axasaada9@gmail.com</strong> et <strong className="text-[#001f5c] underline">achrafbdll@gmail.com</strong>).
+              Merci <strong>{name}</strong>. Votre formulaire d'inscription et de demande pour <strong>{selectedProduct}</strong> a été envoyé directement à l'agence à l'adresse : <strong className="text-[#001f5c] underline">{AGENCY_EMAIL}</strong>.
             </p>
             <div className="bg-slate-50 p-4 rounded-xl border border-slate-200 text-xs text-gray-700 mb-6">
-              Un conseiller AXA vous contactera au <strong>{phone}</strong> sous 2 heures ouvrées pour vous faire part de la proposition la plus avantageuse.
+              Un conseiller AXA prendra contact avec vous au <strong>{phone}</strong> sous 2 heures ouvrées pour finaliser votre dossier d'assurance.
             </div>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a
-                href={`mailto:${AGENCY_EMAIL},${SECONDARY_EMAIL}?subject=${encodeURIComponent(`[Demande Devis AXA Hay Saada] ${selectedProduct} - ${name}`)}&body=${encodeURIComponent(
-                  `Bonjour l'équipe Assurances Hay Saada,\n\n• Produit : ${selectedProduct}\n• Nom : ${name}\n• Tél : ${phone}\n• Email : ${email || 'Non renseigné'}\n• Ville : ${city}\n• Message : ${message || 'Aucun'}\n\nTransmis à ${AGENCY_EMAIL} et ${SECONDARY_EMAIL}`
+                href={`https://wa.me/212661180422?text=${encodeURIComponent(`Bonjour Assurances Hay Saada, je viens de soumettre mon formulaire d'inscription en ligne pour : ${selectedProduct}\n• Nom : ${name}\n• Tél : ${phone}\n• Email : ${email || 'Non renseigné'}\n• Ville : ${city}`)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-[#25D366] hover:bg-[#20ba5a] text-white px-5 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider transition-colors inline-flex items-center justify-center gap-1.5 shadow-sm"
+              >
+                <MessageCircle size={15} />
+                <span>Confirmer sur WhatsApp (06 61 18 04 22)</span>
+              </a>
+              <a
+                href={`mailto:${AGENCY_EMAIL}?subject=${encodeURIComponent(`[Formulaire d'Inscription AXA Hay Saada] ${selectedProduct} - ${name}`)}&body=${encodeURIComponent(
+                  `Bonjour l'équipe Assurances Hay Saada,\n\nVoici mon formulaire d'inscription :\n\n• Produit : ${selectedProduct}\n• Nom : ${name}\n• Tél : ${phone}\n• Email : ${email || 'Non renseigné'}\n• Ville : ${city}\n• Message : ${message || 'Aucun'}\n\nTransmis à ${AGENCY_EMAIL}`
                 )}`}
-                className="bg-[#001f5c] hover:bg-[#002b80] text-white px-5 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider transition-colors inline-flex items-center justify-center gap-1.5"
+                className="bg-[#001f5c] hover:bg-[#002b80] text-white px-4 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider transition-colors inline-flex items-center justify-center gap-1.5"
               >
                 <Mail size={14} />
-                <span>Ouvrir dans ma messagerie</span>
+                <span>Copie par email</span>
               </a>
               <button
                 onClick={handleResetAndClose}
-                className="bg-gray-100 hover:bg-gray-200 text-gray-800 px-6 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider transition-colors cursor-pointer"
+                className="bg-gray-100 hover:bg-gray-200 text-gray-800 px-5 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider transition-colors cursor-pointer"
               >
                 Fermer
               </button>
@@ -115,10 +124,10 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
             </div>
 
             <h3 className="text-2xl font-black text-gray-900 mb-1">
-              Demande de Devis Gratuit
+              Formulaire d'Inscription & Devis
             </h3>
             <p className="text-xs text-gray-500 font-medium mb-6">
-              Étude personnalisée et sans engagement. Réponse rapide par nos conseillers.
+              Remplissez ce formulaire pour vous inscrire ou souscrire à une garantie. Votre demande est transmise directement à <strong className="text-[#001f5c]">{AGENCY_EMAIL}</strong>.
             </p>
 
             <form onSubmit={handleSubmit} className="space-y-4">
@@ -226,12 +235,12 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
                   {isSubmitting ? (
                     <>
                       <Loader2 size={16} className="animate-spin" />
-                      <span>Envoi en cours à l'agence...</span>
+                      <span>Envoi en cours à {AGENCY_EMAIL}...</span>
                     </>
                   ) : (
                     <>
                       <Send size={14} />
-                      <span>Envoyer la demande de devis</span>
+                      <span>Envoyer le formulaire d'inscription</span>
                     </>
                   )}
                 </button>
@@ -255,7 +264,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
 
               <div className="text-center pt-2">
                 <p className="text-[10px] text-gray-400">
-                  Demandes transmises directement à l'agence (<strong>axasaada9@gmail.com</strong> &amp; <strong>achrafbdll@gmail.com</strong>) • Traitement confidentiel garanti.
+                  Formulaire d'inscription directement transmis à l'adresse officielle de l'agence (<strong>{AGENCY_EMAIL}</strong>) • Traitement rapide garanti.
                 </p>
               </div>
             </form>
