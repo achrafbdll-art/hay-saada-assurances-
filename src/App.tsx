@@ -2340,9 +2340,15 @@ const Footer = ({
         
         {/* Ligne inférieure de Copyright et Mentions Légales */}
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4 pt-10 border-t border-white/10 text-xs">
-          <p className="text-blue-200/70 font-medium text-center sm:text-left">
-            © 2026 Assurances Hay Saada - Intermédiaire Agréé AXA Assurance Maroc. Conforme ACAPS.
-          </p>
+          <div className="flex flex-col sm:flex-row items-center gap-1.5 sm:gap-2.5 text-center sm:text-left">
+            <p className="text-blue-200/70 font-medium">
+              © 2026 Assurances Hay Saada - Intermédiaire Agréé AXA Assurance Maroc. Conforme ACAPS.
+            </p>
+            <span className="hidden sm:inline text-white/30">•</span>
+            <span className="text-blue-200/75 font-medium inline-flex items-center gap-1">
+              by <span className="text-white font-bold tracking-wide">assurleadcommunication</span>
+            </span>
+          </div>
           <div className="flex flex-wrap items-center justify-center gap-6 text-blue-200/70 font-medium">
             <span className="hover:text-white transition-colors cursor-pointer">Mentions Légales</span>
             <span className="hover:text-white transition-colors cursor-pointer">Protection Données CNDP</span>
