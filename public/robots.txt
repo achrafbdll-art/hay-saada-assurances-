@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+
+# Directives d'exploration pour Googlebot et moteurs de recherche
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Sitemap officiel pour le référencement naturel
+Sitemap: https://assuranceshaysaada.ma/sitemap.xml

@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 375" fill="none">
+  <!-- Cercle blanc pour fond sombre -->
+  <circle cx="175" cy="175" r="125" fill="#ffffff" />
+  
+  <!-- Lettre A foncée dans le cercle blanc -->
+  <path 
+    fill="#1a1a1a" 
+    fill-rule="evenodd" 
+    d="
+      M 163 75 
+      L 187 75 
+      L 272 255 
+      L 226 255 
+      L 210 216 
+      L 154 216 
+      L 138 255 
+      L 92 255 
+      Z
+      M 175 130 
+      L 159 182 
+      L 191 182 
+      Z
+    " 
+  />
+
+  <!-- Lettre H blanche -->
+  <path 
+    fill="#ffffff" 
+    d="
+      M 274 75 
+      L 322 75 
+      L 322 148 
+      L 392 148 
+      L 392 75 
+      L 440 75 
+      L 440 255 
+      L 392 255 
+      L 392 186 
+      L 322 186 
+      L 322 255 
+      L 274 255 
+      Z
+    " 
+  />
+
+  <!-- Point circulaire '.' blanc après le H -->
+  <circle cx="480" cy="235" r="20" fill="#ffffff" />
+
+  <!-- Typographie blanche : HAY SAADA et ASSURANCES -->
+  <g fill="#ffffff" font-family="Montserrat, Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-weight="900">
+    <text x="274" y="306" font-size="36" letter-spacing="0.5">HAY SAADA</text>
+    <text x="274" y="350" font-size="36" letter-spacing="0.2">ASSURANCES</text>
+  </g>
+</svg>

@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 120" fill="none">
+  <!-- Monogramme Logo officiel Hay Saada Assurances (conforme photo) -->
+  <g transform="translate(10, 8) scale(0.28)">
+    <circle cx="175" cy="175" r="125" fill="#333333" />
+    <path 
+      fill="#ffffff" 
+      fill-rule="evenodd" 
+      d="
+        M 163 75 
+        L 187 75 
+        L 272 255 
+        L 226 255 
+        L 210 216 
+        L 154 216 
+        L 138 255 
+        L 92 255 
+        Z
+        M 175 130 
+        L 159 182 
+        L 191 182 
+        Z
+      " 
+    />
+    <path 
+      fill="#333333" 
+      d="
+        M 274 75 
+        L 322 75 
+        L 322 148 
+        L 392 148 
+        L 392 75 
+        L 440 75 
+        L 440 255 
+        L 392 255 
+        L 392 186 
+        L 322 186 
+        L 322 255 
+        L 274 255 
+        Z
+      " 
+    />
+    <circle cx="480" cy="235" r="20" fill="#333333" />
+    <g fill="#333333" font-family="Montserrat, Inter, system-ui, -apple-system, sans-serif" font-weight="900">
+      <text x="274" y="306" font-size="36" letter-spacing="0.5">HAY SAADA</text>
+      <text x="274" y="350" font-size="36" letter-spacing="0.2">ASSURANCES</text>
+    </g>
+  </g>
+
+  <!-- Séparateur vertical -->
+  <line x1="180" y1="24" x2="180" y2="96" stroke="#e2e8f0" stroke-width="2" />
+
+  <!-- Typographie & Agrément AXA Assurance Maroc -->
+  <g transform="translate(202, 48)">
+    <text font-family="Montserrat, Inter, system-ui, -apple-system, sans-serif" font-weight="900" font-size="22" letter-spacing="0.5">
+      <tspan fill="#001f5c">ASSURANCES </tspan>
+      <tspan fill="#ff0000">HAY SAADA</tspan>
+    </text>
+  </g>
+  <text x="202" y="76" font-family="Montserrat, Inter, system-ui, -apple-system, sans-serif" font-weight="800" font-size="12" fill="#64748b" letter-spacing="1.5">
+    AGENT GÉNÉRAL AXA ASSURANCE MAROC
+  </text>
+</svg>

@@ -1,0 +1,6 @@
+{
+  "name": "AXA Assurance Casablanca",
+  "description": "Nouvelle agence AXA à Casablanca offrant des solutions d'assurance sur mesure pour particuliers et professionnels.",
+  "requestFramePermissions": ["geolocation"],
+  "capabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

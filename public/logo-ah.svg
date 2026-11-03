@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <g transform="translate(4, 9)">
+    <!-- Cercle noir avec le A blanc découpé -->
+    <circle cx="16" cy="18" r="16" fill="#1c1f23" />
+    <path fill="#ffffff" fill-rule="evenodd" d="M14.5 5.5h3l10.5 22h-5.5l-2-4.5H11.5l-2 4.5H4L14.5 5.5zm1.5 6.5l-2.5 6.5h5L16 12z"/>
+    <!-- Lettre H noire majuscule bold -->
+    <path fill="#1c1f23" d="M29 5.5h5.5v9h8.5v-9h5.5v22h-5.5v-8h-8.5v8H29v-22z"/>
+    <!-- Point noir '.' -->
+    <circle cx="51.5" cy="24.5" r="3" fill="#1c1f23" />
+    <!-- Texte officiel Hay Saada Assurances -->
+    <text x="29" y="33" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="4.2" fill="#1c1f23" letter-spacing="0.4">HAY SAADA</text>
+    <text x="29" y="38" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="4.2" fill="#1c1f23" letter-spacing="0.3">ASSURANCES</text>
+  </g>
+</svg>
