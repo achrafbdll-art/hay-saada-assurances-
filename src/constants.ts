@@ -133,6 +133,8 @@ export const CONTACT_INFO = {
   whatsappNumber: "212661180422",
   whatsappLink: "https://wa.me/212661180422",
   email: "axasaada9@gmail.com",
+  emailSecondary: "achrafbdll@gmail.com",
+  emails: ["axasaada9@gmail.com", "achrafbdll@gmail.com"],
   address: "271, Boulevard Chouhada, Bloc 17, Casablanca 20320",
 };
 

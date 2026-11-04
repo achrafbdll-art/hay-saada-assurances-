@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { X, CheckCircle2, Shield, Send, Phone, MessageCircle, Mail, Loader2 } from 'lucide-react';
 import { PRODUCTS_DATA } from '../data/products';
-import { sendFormEmail, AGENCY_EMAIL } from '../services/emailService';
+import { sendFormEmail, AGENCY_EMAIL, buildWhatsAppLeadUrl, buildMailtoLeadUrl } from '../services/emailService';
 
 interface QuoteModalProps {
   isOpen: boolean;
@@ -89,7 +89,14 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
             </div>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a
-                href={`https://wa.me/212661180422?text=${encodeURIComponent(`Bonjour Assurances Hay Saada, je viens de soumettre mon formulaire d'inscription en ligne pour : ${selectedProduct}\n• Nom : ${name}\n• Tél : ${phone}\n• Email : ${email || 'Non renseigné'}\n• Ville : ${city}`)}`}
+                href={buildWhatsAppLeadUrl({
+                  name,
+                  phone,
+                  email,
+                  city,
+                  insuranceType: selectedProduct,
+                  message
+                })}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-[#25D366] hover:bg-[#20ba5a] text-white px-5 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider transition-colors inline-flex items-center justify-center gap-1.5 shadow-sm"
@@ -98,9 +105,14 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
                 <span>Confirmer sur WhatsApp (06 61 18 04 22)</span>
               </a>
               <a
-                href={`mailto:${AGENCY_EMAIL}?subject=${encodeURIComponent(`[Formulaire d'Inscription AXA Hay Saada] ${selectedProduct} - ${name}`)}&body=${encodeURIComponent(
-                  `Bonjour l'équipe Assurances Hay Saada,\n\nVoici mon formulaire d'inscription :\n\n• Produit : ${selectedProduct}\n• Nom : ${name}\n• Tél : ${phone}\n• Email : ${email || 'Non renseigné'}\n• Ville : ${city}\n• Message : ${message || 'Aucun'}\n\nTransmis à ${AGENCY_EMAIL}`
-                )}`}
+                href={buildMailtoLeadUrl({
+                  name,
+                  phone,
+                  email,
+                  city,
+                  insuranceType: selectedProduct,
+                  message
+                })}
                 className="bg-[#001f5c] hover:bg-[#002b80] text-white px-4 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider transition-colors inline-flex items-center justify-center gap-1.5"
               >
                 <Mail size={14} />

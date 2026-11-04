@@ -48,7 +48,8 @@ import { ProductDetailPage } from './components/ProductDetailPage';
 import { CatalogPage } from './components/CatalogPage';
 import { QuoteModal } from './components/QuoteModal';
 import { AxaCornerAccent } from './components/AxaCornerAccent';
-import { sendFormEmail, AGENCY_EMAIL } from './services/emailService';
+import { sendFormEmail, AGENCY_EMAIL, buildWhatsAppLeadUrl, buildMailtoLeadUrl } from './services/emailService';
+import { LeadVaultModal } from './components/LeadVaultModal';
 
 const SaadaMonogram = ({ 
   isScrolled = false, 
@@ -1903,9 +1904,13 @@ const Contact = () => {
 
                     <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
                       <a
-                        href={`https://wa.me/212661180422?text=${encodeURIComponent(
-                          `Bonjour Assurances Hay Saada, je viens d'envoyer une demande de devis pour ${submittedData.type} (Nom: ${submittedData.name}, Tél: ${submittedData.phone}, Email: ${submittedData.email || 'Non renseigné'}).`
-                        )}`}
+                        href={buildWhatsAppLeadUrl({
+                          name: submittedData.name,
+                          phone: submittedData.phone,
+                          email: submittedData.email,
+                          insuranceType: submittedData.type,
+                          message: submittedData.message
+                        })}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold text-xs uppercase tracking-wider transition-all shadow-md"
@@ -1915,9 +1920,13 @@ const Contact = () => {
                       </a>
 
                       <a
-                        href={`mailto:${AGENCY_EMAIL}?subject=${encodeURIComponent(`[Demande Devis AXA Hay Saada] ${submittedData.type} - ${submittedData.name}`)}&body=${encodeURIComponent(
-                          `Bonjour l'équipe Assurances Hay Saada,\n\nUne nouvelle demande a été envoyée depuis le formulaire de contact du site web :\n\n• Nom complet : ${submittedData.name}\n• Téléphone : ${submittedData.phone}\n• Email : ${submittedData.email || 'Non renseigné'}\n• Type d'Assurance : ${submittedData.type}\n• Message : ${submittedData.message || 'Aucun message particulier'}\n\nDestinataire officiel : ${AGENCY_EMAIL}`
-                        )}`}
+                        href={buildMailtoLeadUrl({
+                          name: submittedData.name,
+                          phone: submittedData.phone,
+                          email: submittedData.email,
+                          insuranceType: submittedData.type,
+                          message: submittedData.message
+                        })}
                         className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-[#001f5c] hover:bg-[#002b80] text-white font-bold text-xs uppercase tracking-wider transition-all shadow-md"
                       >
                         <Mail size={15} />
@@ -2174,10 +2183,12 @@ const MapSection = () => {
 
 const Footer = ({
   onNavigate,
-  onSelectProduct
+  onSelectProduct,
+  onOpenLeadVault
 }: {
   onNavigate?: (view: 'home' | 'particuliers' | 'entreprises', targetHash?: string) => void;
   onSelectProduct?: (product: ProductData) => void;
+  onOpenLeadVault?: () => void;
 }) => {
   const particulierIds = ['auto', 'habitation', 'sante', 'epargne-retraite', 'voyage'];
   const particulierList = particulierIds
@@ -2360,10 +2371,19 @@ const Footer = ({
           <p className="text-blue-200/70 font-medium text-center sm:text-left">
             © 2026 Assurances Hay Saada - Intermédiaire Agréé AXA Assurance Maroc. Conforme ACAPS.
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-6 text-blue-200/70 font-medium">
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-blue-200/70 font-medium">
             <span className="hover:text-white transition-colors cursor-pointer">Mentions Légales</span>
             <span className="hover:text-white transition-colors cursor-pointer">Protection Données CNDP</span>
             <span className="hover:text-white transition-colors cursor-pointer">Code des Assurances Maroc</span>
+            <button
+              type="button"
+              onClick={() => onOpenLeadVault?.()}
+              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 hover:bg-white/20 text-white font-bold text-[11px] transition-colors cursor-pointer border border-white/15 shadow-2xs"
+              title="Consulter les formulaires reçus et vérifier la réception email"
+            >
+              <ShieldCheck size={13} className="text-emerald-400" />
+              <span>Suivi & Sauvegarde Formulaires (Agence)</span>
+            </button>
           </div>
         </div>
       </div>
@@ -2468,6 +2488,7 @@ export default function App() {
   const [selectedProduct, setSelectedProduct] = useState<ProductData | null>(null);
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [quoteModalProduct, setQuoteModalProduct] = useState('Assurance Auto & Moto');
+  const [leadVaultOpen, setLeadVaultOpen] = useState(false);
 
   // Handle URL Hash deep linking
   useEffect(() => {
@@ -2639,12 +2660,18 @@ export default function App() {
       <Footer 
         onNavigate={handleNavigate}
         onSelectProduct={handleSelectProduct}
+        onOpenLeadVault={() => setLeadVaultOpen(true)}
       />
 
       <QuoteModal
         isOpen={quoteModalOpen}
         onClose={() => setQuoteModalOpen(false)}
         initialProductTitle={quoteModalProduct}
+      />
+
+      <LeadVaultModal
+        isOpen={leadVaultOpen}
+        onClose={() => setLeadVaultOpen(false)}
       />
 
       {/* Bouton d'action flottant WhatsApp à droite */}
