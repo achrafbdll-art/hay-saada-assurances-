@@ -1320,25 +1320,11 @@ const FAQ_ITEMS: FAQItem[] = [
     answer: "Pour établir votre contrat et vous remettre votre attestation d'assurance immédiatement en agence, il vous suffit de fournir : la copie de la Carte Grise du véhicule (ou certificat provisoire), la copie de votre Permis de conduire en cours de validité, la copie de votre Carte d'Identité Nationale (CIN) ou carte de séjour, ainsi que votre précédente attestation d'assurance avec relevé d'informations pour appliquer immédiatement votre bonus de bon conducteur (jusqu'à 50% de réduction) et vos avantages exclusifs Fidelity by AXA."
   },
   {
-    id: 'faq-fidelity',
-    category: 'auto',
-    categoryLabel: 'Auto & Véhicules',
-    question: "Qu'est-ce que le programme exclusif Fidelity by AXA et comment en bénéficier ?",
-    answer: "Le programme Fidelity by AXA récompense votre fidélité avec des bonus annuels croissants sur vos garanties annexes (remboursement majoré sur bris de glace, incendie, vol et dommages collision), une assistance dépannage prioritaire 24h/24 et 7j/7 partout au Maroc, ainsi que des facilités de mensualisation sans frais pour les fonctionnaires et salariés conventionnés. Vous en bénéficiez automatiquement dès votre première souscription auprès de l'agence Assurances Hay Saada."
-  },
-  {
     id: 'faq-sante-tiers-payant',
     category: 'sante',
     categoryLabel: 'Santé & Prévoyance',
     question: "Comment fonctionne le Tiers Payant en clinique avec l'assurance santé Sehassur ?",
     answer: "Grâce au réseau national de cliniques conventionnées AXA au Maroc, vous n'avez pas à faire l'avance des frais lors d'une hospitalisation médicale ou chirurgicale. Sur simple présentation de votre carte d'assuré et accord préalable de prise en charge délivré rapidement par notre agence, la clinique adresse directement sa facture à AXA. Vous ne réglez sur place que le ticket modérateur éventuel prévu par votre formule."
-  },
-  {
-    id: 'faq-sante-international',
-    category: 'sante',
-    categoryLabel: 'Santé & Prévoyance',
-    question: 'Quelle est la différence entre Sehassur et Sehassur Plus International ?',
-    answer: "Sehassur assure une couverture médicale complète au Maroc pour vos consultations généralistes et spécialistes, examens, ordonnances pharmaceutiques, soins dentaires/optiques et hospitalisations. Sehassur Plus International étend cette protection médicale haut de gamme au Maroc, en Europe et dans le monde entier, vous donnant un accès direct aux centres hospitaliers d'excellence à l'étranger avec des plafonds de remboursement majeurs pour les pathologies lourdes."
   },
   {
     id: 'faq-habitation-garanties',
@@ -1348,25 +1334,11 @@ const FAQ_ITEMS: FAQItem[] = [
     answer: "Oui. Le contrat d'assurance multirisque habitation Habitassur d'AXA protège votre logement (appartement ou villa, que vous soyez propriétaire occupant, bailleur ou locataire) contre les dommages majeurs : incendie, dégâts des eaux, vol avec effraction, bris de glaces, Responsabilité Civile Chef de Famille et accidents domestiques, ainsi que la garantie obligatoire des événements catastrophiques selon la législation marocaine en vigueur."
   },
   {
-    id: 'faq-voyage-schengen',
-    category: 'habitation',
-    categoryLabel: 'Habitation & Famille',
-    question: "En combien de temps l'Attestation d'Assurance Voyage Schengen est-elle délivrée ?",
-    answer: "L'attestation officielle d'assistance voyage AXA (garantissant le plafond minimum obligatoire de 30 000 € de frais médicaux et rapatriement) est éditée immédiatement en main propre à l'agence Assurances Hay Saada à Casablanca ou envoyée par email sous format numérique officiel avec QR Code certifié reconnu à 100% par tous les consulats de l'espace Schengen."
-  },
-  {
     id: 'faq-at-loi1812',
     category: 'entreprise',
     categoryLabel: 'Entreprises & Pros',
     question: "L'assurance Accidents du Travail (Loi 18-12) est-elle obligatoire pour mon entreprise ?",
     answer: "Oui, au Maroc la loi n° 18-12 impose obligatoirement à tout employeur, dès le premier salarié, de souscrire une assurance contre les Accidents du Travail et Maladies Professionnelles. Elle indemnise vos collaborateurs en cas d'arrêt médical, rembourse les soins d'urgence, sert les rentes d'invalidité permanente et garantit un capital aux ayants droit, tout en protégeant pénalement et financièrement l'entreprise."
-  },
-  {
-    id: 'faq-audit-pro',
-    category: 'entreprise',
-    categoryLabel: 'Entreprises & Pros',
-    question: 'Proposez-vous un audit gratuit des contrats et des risques pour les entreprises à Casablanca ?',
-    answer: "Absolument. Nos conseillers entreprises se déplacent directement dans vos locaux ou réalisent une étude comparative approfondie de votre portefeuille d'assurances en cours (Flottes, Multirisque PME/PMI, RC Exploitation, Santé Collective). Cet audit permet d'éliminer les doublons de cotisations, de combler les lacunes de garantie et d'obtenir des tarifs préférentiels négociés auprès d'AXA Maroc."
   }
 ];
 
