@@ -17,7 +17,7 @@ export const SERVICES: Service[] = [
   {
     id: 'habitation',
     title: 'Habitassur (Habitation)',
-    description: 'Protection multirisque habitation complète contre l\'incendie, les dégâts des eaux, le vol et les bris de glaces.',
+    description: 'Protection multirisque habitation complète contre l\'incendie, les dégâts des eaux et les sinistres du foyer.',
     icon: 'Home',
     category: 'particulier'
   },

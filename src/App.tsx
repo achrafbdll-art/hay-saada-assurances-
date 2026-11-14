@@ -500,7 +500,7 @@ const HERO_SLIDES: SlideData[] = [
     titleLine1: "PROTÉGEZ VOTRE",
     titleLine2: "FOYER & VOS BIENS.",
     highlightText: "MULTIRISQUE HABITATION",
-    description: "Protégez votre logement, vos biens et votre mobilier contre l'incendie, les dégâts des eaux, le vol et les bris de glaces avec l'accompagnement AXA.",
+    description: "Protégez votre logement, vos biens et votre mobilier contre l'incendie, les dégâts des eaux et les risques majeurs du foyer avec l'accompagnement AXA.",
     image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=2000",
     alt: "Assurance habitation Habitassur AXA Casablanca Maroc - protection foyer et biens",
     primaryCtaText: "ASSURER MON LOGEMENT",
@@ -1331,7 +1331,7 @@ const FAQ_ITEMS: FAQItem[] = [
     category: 'habitation',
     categoryLabel: 'Habitation & Famille',
     question: 'Mon contrat Habitassur couvre-t-il les dégâts des eaux, le vol et les événements naturels ?',
-    answer: "Oui. Le contrat d'assurance multirisque habitation Habitassur d'AXA protège votre logement (appartement ou villa, que vous soyez propriétaire occupant, bailleur ou locataire) contre les dommages majeurs : incendie, dégâts des eaux, vol avec effraction, bris de glaces, Responsabilité Civile Chef de Famille et accidents domestiques, ainsi que la garantie obligatoire des événements catastrophiques selon la législation marocaine en vigueur."
+    answer: "Oui. Le contrat d'assurance multirisque habitation Habitassur d'AXA protège votre logement (appartement ou villa, que vous soyez propriétaire occupant, bailleur ou locataire) contre les dommages majeurs : incendie, dégâts des eaux, Responsabilité Civile Chef de Famille et accidents domestiques, ainsi que la garantie obligatoire des événements catastrophiques selon la législation marocaine en vigueur."
   },
   {
     id: 'faq-at-loi1812',

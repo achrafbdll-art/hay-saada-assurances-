@@ -82,7 +82,7 @@ export const PRODUCTS_DATA: ProductData[] = [
           "Toutes les garanties de la formule Tiers Éco",
           "Garantie Vol total, partiel et détériorations consécutives",
           "Garantie Incendie et explosion offerte si souscription Vol",
-          "Bris de glaces sans franchise (pare-brise, vitres latérales, lunette arrière)",
+          "Remplacement sans franchise (pare-brise, vitres latérales, lunette arrière)",
           "Dommages collision avec tiers identifié",
           "Véhicule de remplacement en cas d'accident ou de vol"
         ]
@@ -178,8 +178,8 @@ export const PRODUCTS_DATA: ProductData[] = [
     "subcategory": "Foyer & Patrimoine",
     "title": "Habitassur",
     "tagline": "Protégez votre foyer, vos biens et votre famille contre les imprévus du quotidien",
-    "shortDescription": "Que vous soyez locataire ou propriétaire, l'assurance Habitassur vous protège contre l'incendie, les dégâts des eaux, le vol et les bris de glaces avec l'assistance AXA.",
-    "fullDescription": "Que vous soyez locataire, propriétaire occupant ou propriétaire non-occupant, l'assurance multirisque habitation Habitassur vous propose des solutions complètes pour vous prémunir contre tous les événements qui peuvent survenir dans votre logement : incendies et risques annexes, dégâts des eaux avec recherche de fuites et refoulement des égouts, vol et actes de vandalisme.",
+    "shortDescription": "Que vous soyez locataire ou propriétaire, l'assurance Habitassur vous protège contre l'incendie, les dégâts des eaux et les imprévus majeurs du logement avec l'assistance AXA.",
+    "fullDescription": "Que vous soyez locataire, propriétaire occupant ou propriétaire non-occupant, l'assurance multirisque habitation Habitassur vous propose des solutions complètes pour vous prémunir contre tous les événements qui peuvent survenir dans votre logement : incendies et risques annexes, dégâts des eaux avec recherche de fuites et refoulement des égouts et actes de vandalisme.",
     "iconName": "Home",
     "badge": "Contrat Habitassur AXA",
     "startingPrice": "Sur devis personnalisé",
@@ -209,8 +209,8 @@ export const PRODUCTS_DATA: ProductData[] = [
         "features": [
           "Bâtiment, jardin et clôtures couverts en valeur intégrale",
           "Dégâts des eaux incluant frais de recherche de fuites et refoulement égouts",
-          "Vol avec effraction, détériorations immobilières et remplacement serrures",
-          "Bris de glaces, miroirs, vitrages, fenêtres et vérandas",
+          "Détérioration immobilière et remplacement des serrures en cas d'incident",
+          "Protection des miroirs, vitrages, fenêtres et vérandas",
           "Perte d'usage des locaux et indemnité de relogement temporaire",
           "Recours des voisins et des tiers"
         ]
@@ -230,7 +230,7 @@ export const PRODUCTS_DATA: ProductData[] = [
         "coverageLimit": "Jusqu'à 100% valeur mobilier"
       },
       {
-        "title": "Bris de Glaces, Vitrages & Vérandas",
+        "title": "Protection des Vitrages & Vérandas",
         "description": "Remplacement des vitrages des portes, fenêtres, marquises, baies vitrées et miroirs intérieurs.",
         "isIncluded": true,
         "coverageLimit": "Frais réels"
@@ -846,7 +846,7 @@ export const PRODUCTS_DATA: ProductData[] = [
           "Dommages tous accidents, collision, renversement",
           "Garantie exclusive AXA : Aménagements Professionnels",
           "Indemnisation en valeur à neuf sur véhicules récents",
-          "Garantie Vol, Incendie et Bris de glaces sans franchise",
+          "Garantie Vol et Incendie sans franchise",
           "Véhicule de remplacement utilitaire ou berline",
           "Protection corporelle des conducteurs salariés"
         ]
@@ -909,8 +909,8 @@ export const PRODUCTS_DATA: ProductData[] = [
     "subcategory": "Biens & Locaux Pro",
     "title": "Multi PME/PMI, Multi Pharma & Hébergement",
     "tagline": "Couverture sur-mesure des risques liés à votre activité professionnelle, vos stocks et vos locaux",
-    "shortDescription": "La multirisque professionnelle Multi PME-PMI vous garantit contre l'incendie, les dégâts des eaux, le vol, les bris de glaces, bris de machines, informatique et perte d'exploitation, avec des déclinaisons Pharma et Hôtellerie.",
-    "fullDescription": "La multirisque professionnelle Multi PME-PMI vous garantit au titre des risques liés à votre activité professionnelle. La garantie de base obligatoire couvre l'Incendie, l'explosion et les risques annexes. En complément, vous avez la possibilité de choisir au moins 2 garanties optionnelles parmi un large éventail : Dégâts des eaux, Bris de glaces et enseignes, Vol et vandalisme, Bris de matériel informatique et bureautique, Bris de machines, et Responsabilité Civile Exploitation. AXA propose également des offres sectorielles sur-mesure : « Multi Pharma » spécialement conçu pour les pharmacies (avec détérioration des médicaments en réfrigérateur sous température dirigée suite à coupure d'électricité et vol de stupéfiants) et « Multi Hébergement » dédié aux hôtels 1 à 3 étoiles, maisons d'hôtes et riads (incluant vol des biens clients et intoxication alimentaire).",
+    "shortDescription": "La multirisque professionnelle Multi PME-PMI vous garantit contre l'incendie, les dégâts des eaux, les bris de machines, le matériel informatique et la perte d'exploitation, avec des déclinaisons Pharma et Hôtellerie.",
+    "fullDescription": "La multirisque professionnelle Multi PME-PMI vous garantit au titre des risques liés à votre activité professionnelle. La garantie de base obligatoire couvre l'Incendie, l'explosion et les risques annexes. En complément, vous avez la possibilité de choisir au moins 2 garanties optionnelles parmi un large éventail : Dégâts des eaux, Enseignes lumineuses, Actes de vandalisme, Bris de matériel informatique et bureautique, Bris de machines, et Responsabilité Civile Exploitation. AXA propose également des offres sectorielles sur-mesure : « Multi Pharma » spécialement conçu pour les pharmacies (avec détérioration des médicaments en réfrigérateur sous température dirigée suite à coupure d'électricité) et « Multi Hébergement » dédié aux hôtels 1 à 3 étoiles, maisons d'hôtes et riads (incluant les biens clients et intoxication alimentaire).",
     "iconName": "Building2",
     "badge": "Pack Modulable PME & Spécialisés",
     "startingPrice": "Sur devis personnalisé",
@@ -926,8 +926,8 @@ export const PRODUCTS_DATA: ProductData[] = [
         "features": [
           "Garantie de base : Incendie, explosion, foudre et risques annexes",
           "Dégâts des eaux et infiltrations dans les locaux professionnels",
-          "Bris de glaces, vitrines commerciales et enseignes lumineuses",
-          "Vol avec effraction et actes de vandalisme sur stocks et matériel",
+          "Protection des vitrines commerciales et enseignes lumineuses",
+          "Actes de vandalisme sur stocks et matériel professionnel",
           "Bris de matériel informatique et bureautique",
           "Responsabilité Civile Exploitation"
         ]
@@ -1019,7 +1019,7 @@ export const PRODUCTS_DATA: ProductData[] = [
     "title": "Multirisque Industrielle",
     "tagline": "Couverture totale pour la protection intégrale de l'outil industriel et de la pérennité du chef d'entreprise",
     "shortDescription": "L'Assurance Multirisque Industrielle est une couverture totale permettant au dirigeant de sécuriser usines, machines, stocks, vol de fonds, bris de machines, perte d'exploitation et RC industrielle.",
-    "fullDescription": "L'Assurance Multirisque Industrielle est une couverture totale qui permet au chef d'entreprise une protection complète de son outil industriel et de son personnel. Garantie de base : Incendie, explosions, foudre et risques annexes. Les atouts du contrat résident dans un tarif compétitif, un produit à la carte qui s'adapte aux spécificités de chaque site manufacturier, et un large choix d'extensions : vol, transport de fonds et détournement, dégâts des eaux, bris de glaces et enseignes lumineuses, bris de machines de production, pertes d'exploitation après sinistre et Responsabilité Civile Industrielle.",
+    "fullDescription": "L'Assurance Multirisque Industrielle est une couverture totale qui permet au chef d'entreprise une protection complète de son outil industriel et de son personnel. Garantie de base : Incendie, explosions, foudre et risques annexes. Les atouts du contrat résident dans un tarif compétitif, un produit à la carte qui s'adapte aux spécificités de chaque site manufacturier, et un large choix d'extensions : transport de fonds et détournement, dégâts des eaux, enseignes lumineuses, bris de machines de production, pertes d'exploitation après sinistre et Responsabilité Civile Industrielle.",
     "iconName": "Building2",
     "badge": "Couverture Industrielle Intégrale",
     "startingPrice": "Sur devis personnalisé",
@@ -1036,7 +1036,7 @@ export const PRODUCTS_DATA: ProductData[] = [
           "Bâtiments d'usine, hangars et entrepôts industriels",
           "Machines-outils, lignes de production et robots industriels",
           "Stocks de matières premières, produits semi-finis et finis",
-          "Vol avec effraction, agression et détournement de fonds",
+          "Transport de fonds, agression et détournement",
           "Dégâts des eaux et inondations des zones de stockage",
           "Perte d'exploitation consécutive pour préserver la marge brute"
         ]
@@ -1209,7 +1209,7 @@ export const PRODUCTS_DATA: ProductData[] = [
         "features": [
           "Dommages matériels à l'ouvrage (gros œuvre, second œuvre, équipements)",
           "Événements naturels (tempête, inondation, affaissement de terrain)",
-          "Vol avec effraction de matériaux et équipements intégrés",
+          "Protection des matériaux et équipements intégrés sur chantier",
           "Responsabilité Civile Tiers pour désordres causés aux avoisinants",
           "Responsabilité Civile Croisée entre les entreprises du chantier",
           "Période de maintenance de 12 à 24 mois après réception"
@@ -1279,7 +1279,7 @@ export const PRODUCTS_DATA: ProductData[] = [
     "badge": "Protection Cargo & Transit",
     "startingPrice": "Sur devis personnalisé",
     "period": "selon vos besoins",
-    "heroHighlight": "Couverture accidents de la route, vol avec effraction & avaries maritimes",
+    "heroHighlight": "Couverture accidents de la route, risques de transit & avaries maritimes",
     "formules": [
       {
         "id": "cargo-abonnement",
@@ -1385,7 +1385,7 @@ export const PRODUCTS_DATA: ProductData[] = [
           "Vitrines, enseignes lumineuses et devantures de magasin",
           "Stocks de marchandises et tiroir-caisse",
           "RC Exploitation vis-à-vis des clients et fournisseurs",
-          "Dégâts des eaux et vol avec effraction",
+          "Dégâts des eaux et protection des locaux professionnels",
           "Perte d'exploitation pour maintenir vos revenus"
         ]
       },
