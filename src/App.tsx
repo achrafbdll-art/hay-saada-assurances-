@@ -50,6 +50,7 @@ import { QuoteModal } from './components/QuoteModal';
 import { AxaCornerAccent } from './components/AxaCornerAccent';
 import { sendFormEmail, AGENCY_EMAIL, buildWhatsAppLeadUrl, buildMailtoLeadUrl } from './services/emailService';
 import { LeadVaultModal } from './components/LeadVaultModal';
+import { applyPageSEO, updateDynamicJsonLd, resolveRouteFromUrl, initConversionTracking } from './services/seoService';
 
 const SaadaMonogram = ({ 
   isScrolled = false, 
@@ -453,7 +454,7 @@ const HERO_SLIDES: SlideData[] = [
     highlightText: "CONTRAT SUR-MESURE",
     description: "Audit personnalisé de vos risques, garanties transparentes et souscription rapide avec votre Agent Général AXA au cœur de Casablanca.",
     image: "/assets/slide-1-expertise.jpg",
-    alt: "Conseiller en assurance AXA en entretien personnalisé avec un client en agence",
+    alt: "Conseiller en assurance AXA Casablanca en entretien personnalisé avec un client au Maroc",
     primaryCtaText: "NOS SOLUTIONS",
     primaryCtaHref: "#services",
     secondaryCtaText: "DEVIS GRATUIT",
@@ -469,7 +470,7 @@ const HERO_SLIDES: SlideData[] = [
     highlightText: "PROGRAMME FIDELITY",
     description: "Bénéficiez du programme exclusif Fidelity by AXA avec bonus annuel sur vos garanties annexes, pack Auto Fonctionnaires mensualisé sans frais et assistance 24/7.",
     image: "https://scontent.fcmn7-1.fna.fbcdn.net/v/t39.30808-6/476444587_926456679648598_8287693533078305464_n.jpg?stp=dst-jpg_tt6&cstp=mx1600x1197&ctp=s1600x1197&_nc_cat=100&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHDkadILNa2M_OTF5b26a_mLvtCW-me9WAu-0Jb6Z71YHMg3DVjrLZm127TchDpDpU&_nc_ohc=ItqDw-uoHKQQ7kNvwEBguTc&_nc_oc=Adp0xmlkLL1Ruv40-dRUYJGR6HXS5xQbyirAjoM9GsXPjzfoMMXXAzFxySZjHpoQ0a0&_nc_zt=23&_nc_ht=scontent.fcmn7-1.fna&_nc_gid=jB7tYtMlw3knrhIIMtxkdw&_nc_ss=7b2a8&oh=00_AQNHI6P7TGRqcxAWzJ0lZGwm9LoF-LSi8_Rz2LQ8ApVbyA&oe=6ADDB762",
-    alt: "Remise des clés de voiture et protection automobile AXA",
+    alt: "Assurance auto AXA Casablanca Maroc - remise des clés et protection automobile",
     primaryCtaText: "DEVIS AUTO EXPRESS",
     primaryCtaHref: "#contact",
     secondaryCtaText: "DÉCOUVRIR LE PACK AUTO",
@@ -485,7 +486,7 @@ const HERO_SLIDES: SlideData[] = [
     highlightText: "TIERS PAYANT CLINIQUE",
     description: "Solutions santé AXA : Sehassur pour vos soins au Maroc et Sehassur Plus International pour une couverture médicale mondiale sans avance de frais.",
     image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=2000",
-    alt: "Consultation médicale, prise en charge et mutuelle santé AXA",
+    alt: "Assurance santé et mutuelle AXA Casablanca Maroc - prise en charge clinique Sehassur",
     primaryCtaText: "PROTÉGER MA FAMILLE",
     primaryCtaHref: "#contact",
     secondaryCtaText: "NOS FORMULES SANTÉ",
@@ -501,7 +502,7 @@ const HERO_SLIDES: SlideData[] = [
     highlightText: "MULTIRISQUE HABITATION",
     description: "Protégez votre logement, vos biens et votre mobilier contre l'incendie, les dégâts des eaux, le vol et les bris de glaces avec l'accompagnement AXA.",
     image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=2000",
-    alt: "Clés de maison et protection multirisque habitation AXA",
+    alt: "Assurance habitation Habitassur AXA Casablanca Maroc - protection foyer et biens",
     primaryCtaText: "ASSURER MON LOGEMENT",
     primaryCtaHref: "#contact",
     secondaryCtaText: "DÉCOUVRIR HABITASSUR",
@@ -517,7 +518,7 @@ const HERO_SLIDES: SlideData[] = [
     highlightText: "AT/MP & FLOTTE PRO",
     description: "Accidents du Travail (Loi 18-12), Flotte Automobile avec aménagements pro exclusifs, Multi PME/PMI et prévoyance collective pour vos collaborateurs.",
     image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=2000",
-    alt: "Poignée de main et partenariat d'assurance entreprise AXA",
+    alt: "Assurance entreprise AXA Casablanca Maroc - flotte automobile, RC Pro et AT/MP",
     primaryCtaText: "AUDIT DES RISQUES PRO",
     primaryCtaHref: "#professionnels",
     secondaryCtaText: "PARLER À UN CONSEILLER",
@@ -1618,7 +1619,7 @@ const About = () => {
                 <div className="relative overflow-hidden aspect-[4/5] sm:aspect-[3/4]">
                   <img
                     src="/assets/about_team.png"
-                    alt="Équipe et clients réunis chez Assurances Hay Saada AXA"
+                    alt="Équipe et clients réunis chez Assurances Hay Saada AXA Casablanca Maroc"
                     className="w-full h-full object-cover object-center"
                     referrerPolicy="no-referrer"
                     onError={(e) => {
@@ -2490,105 +2491,119 @@ export default function App() {
   const [quoteModalProduct, setQuoteModalProduct] = useState('Assurance Auto & Moto');
   const [leadVaultOpen, setLeadVaultOpen] = useState(false);
 
-  // Handle URL Hash deep linking
+  // Handle URL clean paths + Hash deep linking + Dynamic SEO & Conversion Tracking
   useEffect(() => {
-    const updateSEO = (title: string, description: string) => {
-      document.title = title;
-      const metaDesc = document.querySelector('meta[name="description"]');
-      if (metaDesc) {
-        metaDesc.setAttribute('content', description);
-      }
-      const ogTitle = document.querySelector('meta[property="og:title"]');
-      if (ogTitle) {
-        ogTitle.setAttribute('content', title);
-      }
-    };
+    const syncRouteAndSEO = () => {
+      const resolved = resolveRouteFromUrl(window.location.pathname, window.location.hash);
 
-    const handleHashChange = () => {
-      const hash = window.location.hash;
-      if (hash.startsWith('#produit-')) {
-        const slug = hash.replace('#produit-', '');
-        const found = PRODUCTS_DATA.find(p => p.slug === slug || p.id === slug);
-        if (found) {
-          setSelectedProduct(found);
-          setCurrentView('product-detail');
-          updateSEO(
-            `${found.title} | Assurance AXA Casablanca - Maroc`,
-            `${found.title} chez Assurances Hay Saada, Agent Général AXA Casablanca. ${found.shortDescription.slice(0, 130)}... Devis direct.`
-          );
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-          return;
-        }
+      if (resolved.view === 'product-detail') {
+        const found = resolved.product;
+        setSelectedProduct(found);
+        setCurrentView('product-detail');
+        applyPageSEO({
+          title: `${found.title} | Assurance AXA Casablanca & Maroc`,
+          description: `${found.title} à Casablanca & Maroc chez Assurances Hay Saada (AXA). ${found.shortDescription.slice(0, 110)} Devis au 05 22 63 02 68 ou WhatsApp 06 61 18 04 22.`,
+          keywords: `${found.title.toLowerCase()}, assurance casablanca, assurance axa casablanca, assurance maroc, ${found.subcategory.toLowerCase()} maroc, devis ${found.slug.replace(/-/g, ' ')}`,
+          canonicalPath: `/produits/${found.slug}`
+        });
+        updateDynamicJsonLd('product-detail', found);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        return;
       }
-      if (hash === '#particuliers') {
+
+      if (resolved.view === 'particuliers') {
         setCurrentView('particuliers');
-        updateSEO(
-          "Assurance Particuliers Casablanca & Maroc | AXA Assurances Hay Saada",
-          "Découvrez toutes les solutions d'assurance AXA pour particuliers à Casablanca et au Maroc : Auto, Habitation, Complémentaire Santé et Épargne Retraite."
-        );
+        applyPageSEO({
+          title: "Assurance Particuliers Casablanca & Maroc | AXA Assurances Hay Saada",
+          description: "Assurance Auto, Habitation Habitassur, Santé Sehassur, Épargne Retraite et Voyage Schengen AXA à Casablanca & au Maroc. Tél : 05 22 63 02 68 • WhatsApp : 06 61 18 04 22.",
+          keywords: "assurance particuliers casablanca, assurance auto casablanca, assurance habitation casablanca, mutuelle santé maroc, assurance axa casablanca, assurance maroc",
+          canonicalPath: '/particuliers'
+        });
+        updateDynamicJsonLd('particuliers');
         window.scrollTo({ top: 0, behavior: 'smooth' });
         return;
       }
-      if (hash === '#entreprises') {
+
+      if (resolved.view === 'entreprises') {
         setCurrentView('entreprises');
-        updateSEO(
-          "Assurance Entreprises Casablanca & Maroc | AXA Assurances Hay Saada",
-          "Solutions d'assurance entreprise, PME et professionnels à Casablanca : Multirisque, Flotte Automobile, Accidents du Travail (AT/MP) et RC Pro."
-        );
+        applyPageSEO({
+          title: "Assurance Entreprises Casablanca & Maroc | AXA Assurances Hay Saada",
+          description: "Assurance Entreprise, PME, Flotte Auto, Accidents du Travail (Loi 18-12), Multirisque Pro & RC Pro AXA à Casablanca & au Maroc. Audit gratuit : 05 22 63 02 68.",
+          keywords: "assurance entreprise casablanca, assurance flotte automobile maroc, rc pro casablanca, accidents du travail loi 18-12, multirisque professionnelle maroc, assurance axa casablanca",
+          canonicalPath: '/entreprises'
+        });
+        updateDynamicJsonLd('entreprises');
         window.scrollTo({ top: 0, behavior: 'smooth' });
         return;
       }
-      if (hash === '#services' || hash === '#professionnels' || hash === '#contact') {
-        setCurrentView('home');
-        if (hash === '#contact') {
-          updateSEO(
-            "Contact & Devis Assurance AXA Casablanca | Assurances Hay Saada Maroc",
-            `Contactez l'agence Assurances Hay Saada AXA à Casablanca (Hay Mohammadi). Téléphone: 05 22 63 02 68, WhatsApp: 06 61 18 04 22, Email: ${AGENCY_EMAIL}.`
-          );
-        } else {
-          updateSEO(
-            "Assurance AXA Casablanca | Assurances Hay Saada - Devis Assurance Maroc",
-            "Agence officielle AXA Casablanca : votre cabinet d'assurance au Maroc. Devis rapide assurance auto, santé, habitation et entreprise. Conseils & tarifs immédiats."
-          );
-        }
+
+      setCurrentView('home');
+      if (resolved.sectionId === 'contact') {
+        applyPageSEO({
+          title: "Contact & Devis Assurance AXA Casablanca | Assurances Hay Saada Maroc",
+          description: `Contactez Assurances Hay Saada AXA Casablanca (Hay Mohammadi). Tél : 05 22 63 02 68, WhatsApp : 06 61 18 04 22, Email : ${AGENCY_EMAIL}. Devis rapide Maroc.`,
+          canonicalPath: '/contact'
+        });
+        updateDynamicJsonLd('contact');
+      } else {
+        const cleanPath = window.location.pathname.replace(/\/+$/, '').toLowerCase();
+        const canonical =
+          cleanPath === '/assurance-casablanca' ||
+          cleanPath === '/assurance-axa-casablanca' ||
+          cleanPath === '/assurance-maroc'
+            ? cleanPath
+            : '/';
+
+        applyPageSEO({
+          title: "Assurance AXA Casablanca | Assurance Casablanca & Maroc – Hay Saada",
+          description: "Assurance AXA Casablanca & Maroc : devis gratuit Auto, Santé, Habitation, Pro & Entreprise. Agence Hay Saada. Tél : 05 22 63 02 68 • WhatsApp : 06 61 18 04 22.",
+          canonicalPath: canonical
+        });
+        updateDynamicJsonLd('home');
+      }
+
+      if (resolved.sectionId) {
         setTimeout(() => {
-          const el = document.getElementById(hash.replace('#', ''));
+          const el = document.getElementById(resolved.sectionId!);
           el?.scrollIntoView({ behavior: 'smooth' });
         }, 100);
-        return;
-      }
-      if (!hash || hash === '#' || hash === '#accueil') {
-        setCurrentView('home');
-        updateSEO(
-          "Assurance AXA Casablanca | Assurances Hay Saada - Devis Assurance Maroc",
-          "Agence officielle AXA Casablanca : votre cabinet d'assurance au Maroc. Devis rapide assurance auto, santé, habitation et entreprise. Conseils & tarifs immédiats."
-        );
       }
     };
 
-    handleHashChange();
-    window.addEventListener('hashchange', handleHashChange);
-    return () => window.removeEventListener('hashchange', handleHashChange);
+    syncRouteAndSEO();
+    const stopTracking = initConversionTracking();
+    window.addEventListener('hashchange', syncRouteAndSEO);
+    window.addEventListener('popstate', syncRouteAndSEO);
+    return () => {
+      stopTracking();
+      window.removeEventListener('hashchange', syncRouteAndSEO);
+      window.removeEventListener('popstate', syncRouteAndSEO);
+    };
   }, []);
 
   const handleNavigate = (view: ViewMode, targetHash?: string) => {
     setCurrentView(view);
     if (view === 'particuliers') {
-      window.location.hash = '#particuliers';
+      window.history.pushState(null, '', '/particuliers');
+      window.dispatchEvent(new PopStateEvent('popstate'));
     } else if (view === 'entreprises') {
-      window.location.hash = '#entreprises';
-    } else if (targetHash) {
-      window.location.hash = targetHash;
+      window.history.pushState(null, '', '/entreprises');
+      window.dispatchEvent(new PopStateEvent('popstate'));
+    } else if (targetHash && targetHash !== '#') {
+      window.history.pushState(null, '', `/${targetHash}`);
+      window.dispatchEvent(new PopStateEvent('popstate'));
     } else {
-      window.location.hash = '';
+      window.history.pushState(null, '', '/');
+      window.dispatchEvent(new PopStateEvent('popstate'));
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleSelectProduct = (product: ProductData) => {
     setSelectedProduct(product);
     setCurrentView('product-detail');
-    window.location.hash = `#produit-${product.slug}`;
+    window.history.pushState(null, '', `/produits/${product.slug}`);
+    window.dispatchEvent(new PopStateEvent('popstate'));
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 

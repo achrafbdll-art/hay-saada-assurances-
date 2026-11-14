@@ -1,0 +1,22 @@
+{
+  "name": "Assurances Hay Saada - AXA Casablanca",
+  "short_name": "AXA Hay Saada",
+  "description": "Agence officielle AXA Assurance Casablanca & Maroc. Devis gratuit Auto, Santé, Habitation et Entreprise. Tél: 05 22 63 02 68 | WhatsApp: 06 61 18 04 22.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#001f5c",
+  "lang": "fr-MA",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

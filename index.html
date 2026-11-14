@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fr" class="scroll-smooth" prefix="og: https://ogp.me/ns#">
+<html lang="fr-MA" class="scroll-smooth" prefix="og: https://ogp.me/ns# business: http://ogp.me/ns/business#">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover" />
@@ -7,61 +7,89 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="format-detection" content="telephone=no" />
-    
-    <!-- Favicon & Brand Icons Officiels (AH. Assurances Hay Saada) -->
+    <meta http-equiv="content-language" content="fr-MA" />
+
+    <!-- Favicon, Brand Icons & Web App Manifest -->
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/favicon.png" />
     <link rel="shortcut icon" href="/favicon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
 
-    <!-- SEO Titre & Description Prioritaires (Mots-clés cibles: assurance axa casablanca, assurance maroc, assurance casablanca) -->
-    <title>Assurance AXA Casablanca | Assurances Hay Saada - Devis Assurance Maroc</title>
+    <!-- Preconnect & DNS-Prefetch pour rapidité de chargement (Core Web Vitals SEO) -->
+    <link rel="dns-prefetch" href="https://images.unsplash.com" />
+    <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+    <link rel="dns-prefetch" href="https://wa.me" />
+    <link rel="dns-prefetch" href="https://formsubmit.co" />
+
+    <!-- SEO Titre & Description Prioritaires (Requêtes cibles: assurance Casablanca, assurance AXA Casablanca, assurance Maroc) -->
+    <title>Assurance AXA Casablanca | Assurance Casablanca &amp; Maroc – Hay Saada</title>
     <meta
       name="description"
-      content="Agence officielle AXA Casablanca : votre cabinet d'assurance au Maroc. Devis rapide assurance auto, santé, habitation et entreprise. Conseils &amp; tarifs immédiats."
+      content="Assurance AXA Casablanca &amp; Maroc : devis gratuit Auto, Santé, Habitation, Pro &amp; Entreprise. Agence Assurances Hay Saada. Tél : 05 22 63 02 68 • WhatsApp : 06 61 18 04 22."
     />
     <meta
       name="keywords"
-      content="assurance axa casablanca, assurance maroc, assurance casablanca, axa assurance maroc, assurances hay saada, devis assurance maroc, assurance auto casablanca, mutuelle santé maroc, assurance entreprise casablanca, rcp casablanca, axa hay mohammadi, courtier assurance casablanca, agence axa maroc"
+      content="assurance casablanca, assurance axa casablanca, assurance maroc, axa assurance casablanca, axa assurance maroc, assurances hay saada, agence axa casablanca, devis assurance maroc, devis assurance casablanca, assurance auto casablanca, assurance auto maroc, mutuelle santé maroc, assurance santé casablanca, sehassur axa, assurance habitation casablanca, habitassur axa, assurance entreprise casablanca, multirisque professionnelle maroc, rc pro casablanca, accidents du travail loi 18-12, flotte automobile maroc, assurance voyage schengen maroc, axa hay mohammadi, courtier assurance casablanca"
     />
-    <meta name="author" content="Assurances Hay Saada - Agent Général Agréé AXA Casablanca" />
+    <meta name="author" content="Assurances Hay Saada - Agent Général Agréé AXA Assurance Maroc Casablanca" />
+    <meta name="publisher" content="Assurances Hay Saada AXA Casablanca" />
+    <meta name="copyright" content="Assurances Hay Saada" />
+    <meta name="rating" content="general" />
+    <meta name="distribution" content="global" />
+    <meta name="revisit-after" content="3 days" />
+
+    <!-- URL Canonique & Hreflang International / Maroc -->
     <link rel="canonical" href="https://assuranceshaysaada.ma/" />
+    <link rel="alternate" hreflang="fr-MA" href="https://assuranceshaysaada.ma/" />
+    <link rel="alternate" hreflang="fr" href="https://assuranceshaysaada.ma/" />
+    <link rel="alternate" hreflang="x-default" href="https://assuranceshaysaada.ma/" />
 
-    <!-- Directives d'Indexation Google & Moteurs de Recherche -->
+    <!-- Directives d'Indexation Maximale Google, Bing & Moteurs IA -->
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large" />
-    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large" />
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
 
-    <!-- Référencement Local & Géolocalisation Casablanca Maroc -->
-    <meta name="geo.region" content="MA-CAS" />
-    <meta name="geo.placename" content="Casablanca, Maroc" />
+    <!-- Référencement Local & Géolocalisation Casablanca, Maroc -->
+    <meta name="geo.region" content="MA-06" />
+    <meta name="geo.placename" content="Casablanca, Hay Mohammadi, Maroc" />
     <meta name="geo.position" content="33.593686;-7.581897" />
     <meta name="ICBM" content="33.593686, -7.581897" />
 
-    <!-- OpenGraph Metadata (Facebook, LinkedIn, WhatsApp) -->
-    <meta property="og:type" content="website" />
+    <!-- OpenGraph & Business Contact Metadata (Google, Facebook, LinkedIn, WhatsApp) -->
+    <meta property="og:type" content="business.business" />
     <meta property="og:locale" content="fr_MA" />
     <meta property="og:locale:alternate" content="ar_MA" />
-    <meta property="og:site_name" content="Assurances Hay Saada - AXA Casablanca Maroc" />
-    <meta property="og:title" content="Assurance AXA Casablanca | Assurances Hay Saada - Devis Assurance Maroc" />
+    <meta property="og:site_name" content="Assurances Hay Saada - Assurance AXA Casablanca &amp; Maroc" />
+    <meta property="og:title" content="Assurance AXA Casablanca | Assurance Casablanca &amp; Maroc – Hay Saada" />
     <meta
       property="og:description"
-      content="Agence agréée AXA à Casablanca : assurance auto, habitation, santé, multirisque pro et entreprises au Maroc. Obtenez votre devis personnalisé en direct."
+      content="Agence agréée AXA à Casablanca : assurance auto, habitation, santé, multirisque pro et entreprises au Maroc. Tél : 05 22 63 02 68 • WhatsApp : 06 61 18 04 22 • axasaada9@gmail.com."
     />
     <meta property="og:url" content="https://assuranceshaysaada.ma/" />
     <meta property="og:image" content="https://assuranceshaysaada.ma/assets/slide-1-expertise.jpg" />
-    <meta property="og:image:alt" content="Assurances Hay Saada - Agent Général AXA Casablanca Maroc" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Assurances Hay Saada - Agence Assurance AXA Casablanca Maroc" />
+    <meta property="business:contact_data:street_address" content="271, Boulevard Chouhada, Bloc 17, Hay Mohammadi" />
+    <meta property="business:contact_data:locality" content="Casablanca" />
+    <meta property="business:contact_data:region" content="Grand Casablanca" />
+    <meta property="business:contact_data:postal_code" content="20320" />
+    <meta property="business:contact_data:country_name" content="Maroc" />
+    <meta property="business:contact_data:email" content="axasaada9@gmail.com" />
+    <meta property="business:contact_data:phone_number" content="+212522630268" />
+    <meta property="business:contact_data:website" content="https://assuranceshaysaada.ma/" />
 
     <!-- Twitter / X Card Metadata -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Assurance AXA Casablanca | Assurances Hay Saada - Devis Assurance Maroc" />
+    <meta name="twitter:title" content="Assurance AXA Casablanca | Assurance Casablanca &amp; Maroc – Hay Saada" />
     <meta
       name="twitter:description"
-      content="Agence agréée AXA à Casablanca : devis assurance auto, habitation, santé et entreprise au Maroc."
+      content="Agence agréée AXA à Casablanca : devis assurance auto, habitation, santé et entreprise au Maroc. Appelez le 05 22 63 02 68 ou WhatsApp 06 61 18 04 22."
     />
     <meta name="twitter:image" content="https://assuranceshaysaada.ma/assets/slide-1-expertise.jpg" />
 
-    <!-- Schema.org Rich Snippets JSON-LD pour Google -->
+    <!-- Schema.org Rich Snippets JSON-LD Complet pour Google Search, Google Maps & Moteurs IA -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -70,22 +98,41 @@
           "@type": ["InsuranceAgency", "FinancialService", "LocalBusiness"],
           "@id": "https://assuranceshaysaada.ma/#agency",
           "name": "Assurances Hay Saada - Agent Général AXA Casablanca",
-          "alternateName": ["AXA Assurance Casablanca", "Assurances Hay Saada", "AXA Hay Mohammadi"],
+          "legalName": "Assurances Hay Saada",
+          "alternateName": [
+            "Assurance AXA Casablanca",
+            "Assurance Casablanca",
+            "Assurance Maroc",
+            "AXA Assurance Casablanca",
+            "AXA Assurance Maroc",
+            "AXA Hay Mohammadi Casablanca"
+          ],
           "url": "https://assuranceshaysaada.ma/",
-          "logo": "https://assuranceshaysaada.ma/favicon.png",
-          "image": "https://assuranceshaysaada.ma/assets/slide-1-expertise.jpg",
-          "description": "Agence officielle AXA Casablanca et cabinet d'assurance de référence au Maroc. Devis et souscription d'assurance auto, habitation, santé, multirisque professionnelle, prévoyance et responsabilité civile à Casablanca.",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://assuranceshaysaada.ma/favicon.png"
+          },
+          "image": [
+            "https://assuranceshaysaada.ma/assets/slide-1-expertise.jpg",
+            "https://assuranceshaysaada.ma/assets/about_team.png"
+          ],
+          "description": "Agence officielle AXA à Casablanca (Maroc) spécialisée en assurance auto, mutuelle santé Sehassur, habitation Habitassur, épargne retraite Futuris, assurance voyage Schengen et solutions entreprises (flotte auto, accidents du travail Loi 18-12, multirisque professionnelle, RC Pro et Tous Risques Chantier).",
           "telephone": "+212522630268",
           "email": "axasaada9@gmail.com",
           "priceRange": "$$",
           "currenciesAccepted": "MAD",
           "paymentAccepted": "Cash, Credit Card, Check, Bank Transfer",
+          "hasMap": "https://maps.google.com/?q=33.5936858,-7.5818968",
+          "sameAs": [
+            "https://wa.me/212661180422",
+            "https://www.axa.ma"
+          ],
           "address": {
             "@type": "PostalAddress",
-            "streetAddress": "271, Boulevard Chouhada, Bloc 17",
+            "streetAddress": "271, Boulevard Chouhada, Bloc 17, Hay Mohammadi",
             "addressLocality": "Casablanca",
             "postalCode": "20320",
-            "addressRegion": "Grand Casablanca",
+            "addressRegion": "Casablanca-Settat",
             "addressCountry": "MA"
           },
           "geo": {
@@ -93,6 +140,68 @@
             "latitude": 33.5936858,
             "longitude": -7.5818968
           },
+          "contactPoint": [
+            {
+              "@type": "ContactPoint",
+              "telephone": "+212522630268",
+              "contactType": "customer service",
+              "areaServed": "MA",
+              "availableLanguage": ["French", "Arabic"],
+              "hoursAvailable": [
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                  "opens": "09:00",
+                  "closes": "17:00"
+                },
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": "Saturday",
+                  "opens": "09:00",
+                  "closes": "13:00"
+                }
+              ]
+            },
+            {
+              "@type": "ContactPoint",
+              "telephone": "+212661180422",
+              "contactType": "sales",
+              "contactOption": "TollFree",
+              "url": "https://wa.me/212661180422",
+              "areaServed": "MA",
+              "availableLanguage": ["French", "Arabic"]
+            },
+            {
+              "@type": "ContactPoint",
+              "email": "axasaada9@gmail.com",
+              "contactType": "sales",
+              "url": "https://assuranceshaysaada.ma/#contact",
+              "areaServed": "MA",
+              "availableLanguage": ["French", "Arabic"]
+            }
+          ],
+          "potentialAction": [
+            {
+              "@type": "CommunicateAction",
+              "name": "Appeler l'agence AXA Casablanca",
+              "target": "tel:+212522630268"
+            },
+            {
+              "@type": "CommunicateAction",
+              "name": "Contacter sur WhatsApp AXA Casablanca",
+              "target": "https://wa.me/212661180422"
+            },
+            {
+              "@type": "CommunicateAction",
+              "name": "Envoyer un email à l'agence",
+              "target": "mailto:axasaada9@gmail.com"
+            },
+            {
+              "@type": "ReserveAction",
+              "name": "Demander un devis gratuit d'assurance",
+              "target": "https://assuranceshaysaada.ma/#contact"
+            }
+          ],
           "openingHoursSpecification": [
             {
               "@type": "OpeningHoursSpecification",
@@ -108,58 +217,166 @@
             }
           ],
           "areaServed": [
-            {
-              "@type": "City",
-              "name": "Casablanca"
-            },
-            {
-              "@type": "AdministrativeArea",
-              "name": "Grand Casablanca"
-            },
-            {
-              "@type": "Country",
-              "name": "Maroc"
-            }
+            { "@type": "City", "name": "Casablanca" },
+            { "@type": "Place", "name": "Hay Mohammadi, Casablanca" },
+            { "@type": "Place", "name": "Ain Sebaa, Casablanca" },
+            { "@type": "Place", "name": "Roches Noires, Casablanca" },
+            { "@type": "Place", "name": "Maarif, Casablanca" },
+            { "@type": "Place", "name": "Anfa, Casablanca" },
+            { "@type": "Place", "name": "Sidi Bernoussi, Casablanca" },
+            { "@type": "City", "name": "Mohammedia" },
+            { "@type": "AdministrativeArea", "name": "Grand Casablanca" },
+            { "@type": "Country", "name": "Maroc" }
           ],
           "parentOrganization": {
             "@type": "Organization",
             "name": "AXA Assurance Maroc",
             "url": "https://www.axa.ma"
           },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.7",
+            "bestRating": "5",
+            "worstRating": "1",
+            "reviewCount": "3"
+          },
           "hasOfferCatalog": {
             "@type": "OfferCatalog",
-            "name": "Solutions d'Assurance Casablanca & Maroc",
+            "name": "Catalogue Solutions d'Assurance AXA Casablanca & Maroc",
             "itemListElement": [
               {
                 "@type": "Offer",
+                "url": "https://assuranceshaysaada.ma/produits/assurance-auto",
                 "itemOffered": {
                   "@type": "Service",
-                  "name": "Assurance Auto Casablanca",
-                  "description": "Assurance automobile et moto AXA avec assistance 24/7 au Maroc."
+                  "name": "Assurance Auto Casablanca & Fidelity by AXA",
+                  "description": "Assurance automobile, pack fonctionnaires CNT et moto AXA avec assistance dépannage 24/7 au Maroc."
                 }
               },
               {
                 "@type": "Offer",
+                "url": "https://assuranceshaysaada.ma/produits/assurance-habitation",
                 "itemOffered": {
                   "@type": "Service",
-                  "name": "Assurance Santé Maroc & International",
-                  "description": "Couverture médicale Sehassur au Maroc et Sehassur Plus International avec tiers payant direct."
+                  "name": "Assurance Habitation Casablanca (Habitassur)",
+                  "description": "Multirisque habitation complète pour propriétaires et locataires à Casablanca et au Maroc."
                 }
               },
               {
                 "@type": "Offer",
+                "url": "https://assuranceshaysaada.ma/produits/assurance-sante",
                 "itemOffered": {
                   "@type": "Service",
-                  "name": "Assurance Habitation Casablanca",
-                  "description": "Protection complète Habitassur pour propriétaires et locataires."
+                  "name": "Assurance Santé Maroc (Sehassur & Sehassur Plus International)",
+                  "description": "Mutuelle santé avec tiers payant direct en cliniques privées au Maroc et à l'international."
                 }
               },
               {
                 "@type": "Offer",
+                "url": "https://assuranceshaysaada.ma/produits/epargne-retraite",
                 "itemOffered": {
                   "@type": "Service",
-                  "name": "Assurance Entreprise & Multirisque Professionnelle",
-                  "description": "Couverture sur-mesure pour PME, PMI, commerçants, flotte et BTP à Casablanca."
+                  "name": "Épargne Retraite Futuris II & Éducation Educatis II",
+                  "description": "Épargne retraite déductible à 100% de l'IR au Maroc et financement des études supérieures."
+                }
+              },
+              {
+                "@type": "Offer",
+                "url": "https://assuranceshaysaada.ma/produits/assurance-voyage",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Assurance Voyage Schengen Maroc (Globale Assistance)",
+                  "description": "Attestation Visa Schengen immédiate conforme 30 000 € à Casablanca."
+                }
+              },
+              {
+                "@type": "Offer",
+                "url": "https://assuranceshaysaada.ma/produits/plaisance-chasse",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Assurance Plaisance, Jet Ski & RC Chasse Maroc",
+                  "description": "Assurance bateaux, jet-skis et attestation RC Chasse officielle au Maroc."
+                }
+              },
+              {
+                "@type": "Offer",
+                "url": "https://assuranceshaysaada.ma/produits/accidents-travail",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Assurance Accidents du Travail (Loi 18-12) Casablanca",
+                  "description": "Couverture obligatoire AT/MP pour entreprises et salariés au Maroc."
+                }
+              },
+              {
+                "@type": "Offer",
+                "url": "https://assuranceshaysaada.ma/produits/prevoyance-sante-entreprise",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Prévoyance & Santé Collective Entreprise Maroc",
+                  "description": "Mutuelle entreprise déductible de l'IS avec tiers payant clinique."
+                }
+              },
+              {
+                "@type": "Offer",
+                "url": "https://assuranceshaysaada.ma/produits/flotte-automobile",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Assurance Flotte Automobile Entreprise Casablanca",
+                  "description": "Gestion unifiée dès 5 véhicules avec garantie exclusive des aménagements professionnels."
+                }
+              },
+              {
+                "@type": "Offer",
+                "url": "https://assuranceshaysaada.ma/produits/multirisque-professionnelle",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Multirisque Professionnelle PME/PMI, Multi Pharma & Hébergement",
+                  "description": "Protection des locaux professionnels, pharmacies, hôtels, stocks et perte d'exploitation."
+                }
+              },
+              {
+                "@type": "Offer",
+                "url": "https://assuranceshaysaada.ma/produits/multirisque-industrielle",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Multirisque Industrielle Casablanca & Maroc",
+                  "description": "Couverture complète usines, machines de production et transport de fonds."
+                }
+              },
+              {
+                "@type": "Offer",
+                "url": "https://assuranceshaysaada.ma/produits/responsabilite-civile-professionnelle",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Responsabilité Civile Professionnelle & Exploitation Maroc",
+                  "description": "Bouclier juridique et financier pour entreprises et professions libérales."
+                }
+              },
+              {
+                "@type": "Offer",
+                "url": "https://assuranceshaysaada.ma/produits/tous-risques-chantier",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Tous Risques Chantier (TRC) & RC Décennale BTP Maroc",
+                  "description": "Protection intégrale des chantiers, ouvrages et responsabilités croisées au Maroc."
+                }
+              },
+              {
+                "@type": "Offer",
+                "url": "https://assuranceshaysaada.ma/produits/marchandises-transportees",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Assurance Marchandises Transportées (Cargo & Transit) Casablanca",
+                  "description": "Couverture transport routier, maritime et aérien pour import/export."
+                }
+              },
+              {
+                "@type": "Offer",
+                "url": "https://assuranceshaysaada.ma/produits/solutions-domaines-activite",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Packs Assurance par Domaine d'Activité Casablanca",
+                  "description": "Solutions dédiées artisans, commerçants, médecins, cafés, hôtels et restaurants."
                 }
               }
             ]
@@ -169,12 +386,24 @@
           "@type": "WebSite",
           "@id": "https://assuranceshaysaada.ma/#website",
           "url": "https://assuranceshaysaada.ma/",
-          "name": "Assurance AXA Casablanca | Assurances Hay Saada",
-          "description": "Site officiel de l'agence AXA Assurances Hay Saada à Casablanca, Maroc.",
+          "name": "Assurance AXA Casablanca | Assurances Hay Saada Maroc",
+          "description": "Site officiel de l'agence AXA Assurances Hay Saada à Casablanca, Maroc. Devis assurance auto, santé, habitation et entreprise.",
           "publisher": {
             "@id": "https://assuranceshaysaada.ma/#agency"
           },
           "inLanguage": "fr-MA"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://assuranceshaysaada.ma/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Assurance AXA Casablanca",
+              "item": "https://assuranceshaysaada.ma/"
+            }
+          ]
         },
         {
           "@type": "FAQPage",
@@ -182,26 +411,66 @@
           "mainEntity": [
             {
               "@type": "Question",
-              "name": "Comment obtenir un devis d'assurance AXA à Casablanca ?",
+              "name": "Quels sont les documents nécessaires pour souscrire une assurance auto chez AXA ?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Vous pouvez demander votre devis gratuit directement sur notre site via notre formulaire en ligne, nous contacter par téléphone au 05 22 63 02 68, ou échanger instantanément par WhatsApp au 06 61 18 04 22. Un conseiller de l'agence Assurances Hay Saada vous répond sous 2 heures ouvrées."
+                "text": "Pour établir votre contrat et vous remettre votre attestation d'assurance immédiatement en agence à Casablanca, il vous suffit de fournir : la copie de la Carte Grise du véhicule, la copie de votre Permis de conduire, la copie de votre CIN ou carte de séjour, ainsi que votre précédente attestation d'assurance avec relevé d'informations."
               }
             },
             {
               "@type": "Question",
-              "name": "Quelles sont les formules d'assurance proposées au Maroc par AXA Casablanca ?",
+              "name": "Qu'est-ce que le programme exclusif Fidelity by AXA et comment en bénéficier ?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "L'agence Assurances Hay Saada propose l'ensemble des produits AXA Maroc pour particuliers et professionnels : Assurance Auto & Moto, Habitation (Habitassur), Complémentaire Santé, Épargne Retraite, Flotte Automobile, Multirisque Professionnelle (PME/PMI), Accidents du Travail (Loi 18-12), et Tous Risques Chantier."
+                "text": "Le programme Fidelity by AXA récompense votre fidélité avec des bonus annuels croissants sur vos garanties annexes, une assistance dépannage prioritaire 24h/24 et 7j/7 partout au Maroc, ainsi que des facilités de mensualisation sans frais pour les fonctionnaires. Vous en bénéficiez automatiquement auprès de l'agence Assurances Hay Saada."
               }
             },
             {
               "@type": "Question",
-              "name": "Où se trouve l'agence AXA Assurances Hay Saada à Casablanca ?",
+              "name": "Comment fonctionne le Tiers Payant en clinique avec l'assurance santé Sehassur ?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Notre agence est située au 271, Boulevard Chouhada, Bloc 17, Casablanca 20320, Maroc, avec un accès facile et des parkings à proximité."
+                "text": "Grâce au réseau national de cliniques conventionnées AXA au Maroc, vous n'avez pas à faire l'avance des frais lors d'une hospitalisation médicale ou chirurgicale sur présentation de votre carte d'assuré et accord de prise en charge."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Quelle est la différence entre Sehassur et Sehassur Plus International ?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sehassur assure une couverture médicale complète au Maroc (consultations, examens, pharmacie, dentaire, optique et hospitalisations). Sehassur Plus International étend cette protection au Maroc, en Europe et dans le monde entier avec des plafonds majeurs."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Mon contrat Habitassur couvre-t-il les dégâts des eaux, le vol et les événements naturels ?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Oui. Le contrat Habitassur d'AXA protège votre logement (propriétaire ou locataire) contre l'incendie, les dégâts des eaux, le vol avec effraction, le bris de glaces, la Responsabilité Civile Chef de Famille et les événements catastrophiques au Maroc."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "En combien de temps l'Attestation d'Assurance Voyage Schengen est-elle délivrée ?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "L'attestation officielle d'assistance voyage AXA (couverture minimale obligatoire de 30 000 €) est éditée immédiatement en main propre à l'agence Assurances Hay Saada à Casablanca ou envoyée par email avec QR Code certifié."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "L'assurance Accidents du Travail (Loi 18-12) est-elle obligatoire pour mon entreprise ?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Oui, au Maroc la loi n° 18-12 impose obligatoirement à tout employeur, dès le premier salarié, de souscrire une assurance contre les Accidents du Travail et Maladies Professionnelles."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Proposez-vous un audit gratuit des contrats et des risques pour les entreprises à Casablanca ?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Oui. Nos conseillers entreprises réalisent un audit gratuit de vos contrats (Flottes, Multirisque PME/PMI, RC Exploitation, Santé Collective) à Casablanca et partout au Maroc."
               }
             }
           ]
@@ -212,6 +481,44 @@
   </head>
   <body>
     <div id="root"></div>
+    <noscript>
+      <header>
+        <h1>Assurance AXA Casablanca &amp; Assurance Maroc — Assurances Hay Saada</h1>
+        <p>Agent Général Agréé AXA Assurance Maroc à Casablanca (271, Boulevard Chouhada, Bloc 17, Hay Mohammadi, Casablanca 20320).</p>
+        <p>
+          Appelez directement l'agence : <a href="tel:+212522630268">05 22 63 02 68</a> |
+          WhatsApp Direct : <a href="https://wa.me/212661180422">06 61 18 04 22</a> |
+          Email : <a href="mailto:axasaada9@gmail.com">axasaada9@gmail.com</a>
+        </p>
+      </header>
+      <main>
+        <section>
+          <h2>Solutions d'Assurance Particuliers à Casablanca &amp; au Maroc</h2>
+          <ul>
+            <li><a href="/produits/assurance-auto">Assurance Auto Casablanca &amp; Programme Fidelity by AXA</a></li>
+            <li><a href="/produits/assurance-habitation">Assurance Habitation Casablanca (Habitassur)</a></li>
+            <li><a href="/produits/assurance-sante">Assurance Santé Maroc (Sehassur &amp; Sehassur Plus International)</a></li>
+            <li><a href="/produits/epargne-retraite">Épargne Retraite Futuris II &amp; Éducation Educatis II (Déductible IR)</a></li>
+            <li><a href="/produits/assurance-voyage">Assurance Voyage Schengen 30 000 € Maroc</a></li>
+            <li><a href="/produits/plaisance-chasse">Assurance Plaisance, Jet Ski &amp; RC Chasse Maroc</a></li>
+          </ul>
+        </section>
+        <section>
+          <h2>Solutions d'Assurance Entreprises &amp; Professionnels à Casablanca &amp; au Maroc</h2>
+          <ul>
+            <li><a href="/produits/accidents-travail">Assurance Accidents du Travail &amp; Maladies Pro (Loi 18-12)</a></li>
+            <li><a href="/produits/prevoyance-sante-entreprise">Prévoyance Santé Collective Entreprise</a></li>
+            <li><a href="/produits/flotte-automobile">Assurance Flotte Automobile Entreprise</a></li>
+            <li><a href="/produits/multirisque-professionnelle">Multirisque Professionnelle PME/PMI, Multi Pharma &amp; Hébergement</a></li>
+            <li><a href="/produits/multirisque-industrielle">Assurance Multirisque Industrielle</a></li>
+            <li><a href="/produits/responsabilite-civile-professionnelle">Responsabilité Civile Professionnelle &amp; Exploitation</a></li>
+            <li><a href="/produits/tous-risques-chantier">Assurance Tous Risques Chantier (TRC) &amp; Décennale BTP</a></li>
+            <li><a href="/produits/marchandises-transportees">Assurance Marchandises Transportées (Cargo &amp; Transit)</a></li>
+            <li><a href="/produits/solutions-domaines-activite">Packs Assurance par Domaine d'Activité</a></li>
+          </ul>
+        </section>
+      </main>
+    </noscript>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
